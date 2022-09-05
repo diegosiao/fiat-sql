@@ -1,0 +1,21 @@
+version: "3.8"
+
+services:
+  fiatsql-postgres-db:
+    build: ../vendors/postgres
+    restart: always
+    environment:
+      - POSTGRES_PASSWORD=pwd123!
+    ports:
+      - 5432:5432
+  fiatsql-mysql-db:
+    build: ../vendors/mysql
+    restart: always
+    environment:
+      - MYSQL_DATABASE=example
+      - MYSQL_USER=fiatsql
+      - MYSQL_PASSWORD=pwd123!
+      - MYSQL_ROOT_PASSWORD=pwd123!
+    ports:
+      - 3306:3306
+  

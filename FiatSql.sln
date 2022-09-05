@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32602.291
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FiatSql.Cli", "source\FiatSql.Cli\FiatSql.Cli\FiatSql.Cli.csproj", "{793C8C3A-16B7-48B6-80C0-C28B32BC51D8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FiatSql", "source\FiatSql\FiatSql\FiatSql.csproj", "{01F1FE38-6BF5-4E19-9D5A-36E4C5BAA2E4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{793C8C3A-16B7-48B6-80C0-C28B32BC51D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{793C8C3A-16B7-48B6-80C0-C28B32BC51D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{793C8C3A-16B7-48B6-80C0-C28B32BC51D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{793C8C3A-16B7-48B6-80C0-C28B32BC51D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01F1FE38-6BF5-4E19-9D5A-36E4C5BAA2E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01F1FE38-6BF5-4E19-9D5A-36E4C5BAA2E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01F1FE38-6BF5-4E19-9D5A-36E4C5BAA2E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01F1FE38-6BF5-4E19-9D5A-36E4C5BAA2E4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F62DFFCC-804F-4673-A618-C8D753AE2CBF}
+	EndGlobalSection
+EndGlobal
