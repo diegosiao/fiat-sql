@@ -1,8 +1,8 @@
-﻿namespace FiatSql.Vendors.Postgres.v14
+﻿namespace FiatSql.Vendors.Postgres
 {
     public class PostgresTemplates : IFiatTemplates
     {
-        public string ProcedureTemplate => 
+        public string ProcedureTemplate =>
 @"CREATE OR REPLACE FUNCTION _#name#_(
 _#parameters#_
 )

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 
-namespace FiatSql.Vendors.Postgres.v14
+namespace FiatSql.Vendors.Postgres
 {
     public class PostgresSqlWriter : IFiatSqlWriter
     {
@@ -83,7 +83,7 @@ namespace FiatSql.Vendors.Postgres.v14
             var sqlResult = new FiatSqlParseResult
             {
                 Sql = $"SELECT * FROM {map.TableName} WHERE {map.PkColumnName} = :pId",
-                Params = new FiatDbParameter[] { 
+                Params = new FiatDbParameter[] {
                     new FiatDbParameter("pId", id)
                 }
             };

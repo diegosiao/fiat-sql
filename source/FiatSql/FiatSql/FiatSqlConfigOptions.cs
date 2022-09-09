@@ -1,5 +1,5 @@
 ﻿using FiatSql.Vendors;
-using FiatSql.Vendors.Postgres.v14;
+using FiatSql.Vendors.Postgres;
 using System;
 using System.Data;
 
