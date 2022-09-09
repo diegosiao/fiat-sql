@@ -25,9 +25,18 @@ namespace FiatSql
             } 
         }
 
-        public string[] ProcedureNamespaces { get; set; }
+        public string[] ProceduresNamespaces { get; set; }
 
         public string[] EntitiesNamespaces { get; set; }
+
+        /// <summary>
+        /// The name of the table 
+        /// </summary>
+        public string ManagementTable { get; set; }
+
+        public string EntityManagementTable { get; set; }
+
+        public string ProcedureManagementTable { get; set; }
 
         public uint? DefaultIdentation { get; set; }
 
@@ -35,7 +44,11 @@ namespace FiatSql
 
         public string ConnectionString { get; set; }
 
-        public bool IgnoreProcedureValidation { get; set; }
+        public bool SkipShemaValidation { get; set; }
+
+        public bool SkipProcedureValidation { get; set; }
+
+        public FiatNamingPolicy NamingPolicy { get; set; }
 
         private IFiatSqlWriter _writer;
 
@@ -53,6 +66,16 @@ namespace FiatSql
                         throw new Exception($"Vendor not implemented {Vendor}");
                 }
             }
+        }
+
+        public FiatSqlConfigOptions()
+        {
+            // Default values
+            NamingPolicy = FiatNamingPolicy.Lowercase;
+            
+            ManagementTable = "FiatManagement".Np();
+            EntityManagementTable = "FiatManagementEntity".Np();
+            ProcedureManagementTable = "FiatManagementProcedure".Np();
         }
     }
 }

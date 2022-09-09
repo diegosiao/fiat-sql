@@ -2,14 +2,13 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Data.Common;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 
 namespace FiatSql
 {
-    public abstract class FiatSqlProcedure
+    public abstract class FiatSqlCommand
     {
         private string _sql;
         public string Sql
@@ -61,7 +60,7 @@ namespace FiatSql
 
         protected readonly FiatSqlConfigOptions Options;
 
-        public FiatSqlProcedure(FiatSqlConfigOptions options = null)
+        public FiatSqlCommand(FiatSqlConfigOptions options = null)
         {
             Options = options ?? FiatSql.Options;
             Parameters = new List<FiatDbParameter>();
@@ -71,6 +70,11 @@ namespace FiatSql
             IncreaseIdentation();
         }
 
+        /// <summary>
+        /// Nope... Insert(), SelectInto(), Update(), Delete() instead. More philosophically aligned.
+        /// </summary>
+        /// <typeparam name="TEntity"></typeparam>
+        /// <param name="operation"></param>
         protected void Execute<TEntity>(FiatCrudOperation<TEntity> operation)
         {
             Parameters.AddRange(operation.Parameters);
@@ -81,6 +85,16 @@ namespace FiatSql
             var ident = GetIdentation();
             foreach (var line in operationLines)
                 BodySql.AppendLine($"{ident}{line}");
+        }
+
+        protected void Insert<TEntity>(TEntity entity)
+        {
+
+        }
+
+        protected void Update<TEntity>(TEntity entity)
+        {
+
         }
 
         protected void If(string sqlCondition, Action action)

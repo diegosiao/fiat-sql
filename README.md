@@ -11,4 +11,3 @@ Turn C# code into translated SQL procedures for supported databases:
 - MySQL
 - MariaDB
 - Oracle
-

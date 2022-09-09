@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.Common;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FiatSql
 {
@@ -20,6 +16,17 @@ namespace FiatSql
         public override string SourceColumn { get; set; }
         public override bool SourceColumnNullMapping { get; set; }
         public override object Value { get; set; }
+
+        public FiatDbParameter()
+        {
+
+        }
+
+        public FiatDbParameter(string parameterName, object value)
+        {
+            ParameterName = parameterName;
+            Value = value;
+        }
 
         public override void ResetDbType()
         {

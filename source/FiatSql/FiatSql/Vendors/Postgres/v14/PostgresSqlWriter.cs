@@ -75,5 +75,20 @@ namespace FiatSql.Vendors.Postgres.v14
                     throw new DatabaseVendorDbTypeNotSupportedException(parameter.DbType);
             }
         }
+
+        public FiatSqlParseResult SelectById<TEntity>(object id)
+        {
+            var map = FiatCache.GetMap<TEntity>();
+
+            var sqlResult = new FiatSqlParseResult
+            {
+                Sql = $"SELECT * FROM {map.TableName} WHERE {map.PkColumnName} = :pId",
+                Params = new FiatDbParameter[] { 
+                    new FiatDbParameter("pId", id)
+                }
+            };
+
+            return sqlResult;
+        }
     }
 }

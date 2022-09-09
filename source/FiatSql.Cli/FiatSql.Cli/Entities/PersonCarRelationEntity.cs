@@ -3,7 +3,7 @@ using System;
 
 namespace FiatSql.Cli.Entities
 {
-    [FiatTable(Name = "personcars")]
+    [FiatTable("personcars", "id")]
     public class PersonCarRelationEntity : EntityBase<PersonCarRelationEntity>
     {
         public Guid CarId { get; set; }

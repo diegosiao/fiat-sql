@@ -2,7 +2,7 @@
 
 namespace FiatSql.Cli.Entities
 {
-    [FiatTable(Name = "car")]
+    [FiatTable("car", "id", 10)]
     public class CarEntity : EntityBase<CarEntity>
     {
         public string Model { get; set; }

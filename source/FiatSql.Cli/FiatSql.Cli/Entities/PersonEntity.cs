@@ -3,12 +3,16 @@ using System;
 
 namespace FiatSql.Cli.Entities
 {
-    [FiatTable(Name = "person")]
+    [FiatTable("person", "id")]
     public class PersonEntity : EntityBase<PersonEntity>
     {
         public string Name { get; set; }
 
         public bool IsPremium { get; set; }
+
+        public Guid HomeAddressId { get; set; }
+
+        public Guid WorkAddressId { get; set; }
 
         public DateTime Birth { get; set; }
 

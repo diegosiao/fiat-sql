@@ -1,13 +1,12 @@
 ﻿using FiatSql.Cli.Entities;
-using System.Diagnostics;
 
-namespace FiatSql.Cli.Procedures
+namespace FiatSql.Cli.Commands
 {
     /// <summary>
     /// Runs in a TRANSACTION.
     /// Keep it clean. Keep it simple.
     /// </summary>
-    public class Sp_CustomerCreate : FiatSqlProcedure
+    public class CustomerCreateCommand : FiatSqlCommand
     {
         public OutParameterVarchar Error { get; set; }
 
@@ -17,19 +16,27 @@ namespace FiatSql.Cli.Procedures
         /// </summary>
         /// <param name="person"></param>
         /// <param name="car"></param>
-        public Sp_CustomerCreate(
+        public CustomerCreateCommand(
             PersonEntity person,
             CarEntity car,
             PersonCarRelationEntity personCarRelation,
             FiatSqlConfigOptions options = null) : base(options)
         {
-            Execute(new FiatInsert<PersonEntity>(person));
+            // Implement this
+            Insert(person);
 
+            Insert(car);
+
+            Insert(personCarRelation);
+
+            /****************************
+            TODO Remove this PoC approach
+            *****************************/
+            Execute(new FiatInsert<PersonEntity>(person));
+            
             Execute(new FiatInsert<CarEntity>(car));
 
             Execute(new FiatInsert<PersonCarRelationEntity>(personCarRelation));
-
-            Debug.WriteLine(BuildSql());
         }
     }
 }
