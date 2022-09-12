@@ -1,5 +1,8 @@
 ﻿using Dapper;
+using System;
 using System.Collections.Generic;
+using System.Linq.Expressions;
+using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 
 namespace FiatSql
@@ -49,6 +52,11 @@ namespace FiatSql
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="options"></param>
         public static async Task<T> GetByIdAsync(object id, FiatSqlConfigOptions options = null)
         {
             var _options = options ?? FiatSql.Options;
@@ -102,6 +110,11 @@ namespace FiatSql
             }
         }
 
+        public static void Update(Expression<Func<T, object>> columns)
+        {
+
+        }
+
         public static T Upsert(T entity, FiatSqlConfigOptions options = null)
         {
             var _options = options ?? FiatSql.Options;
@@ -131,7 +144,7 @@ namespace FiatSql
             }
         }
 
-        public static async Task<T> Delete(object id, FiatSqlConfigOptions options = null)
+        public static T Delete(object id, FiatSqlConfigOptions options = null)
         {
             var _options = options ?? FiatSql.Options;
 
@@ -139,8 +152,7 @@ namespace FiatSql
             {
                 var selectByIdSql = _options.Writer.SelectById<T>(id);
 
-                return
-                    await connection.QueryFirstOrDefaultAsync<T>(
+                return connection.QueryFirstOrDefault<T>(
                         selectByIdSql.Sql,
                         selectByIdSql.Params);
             }

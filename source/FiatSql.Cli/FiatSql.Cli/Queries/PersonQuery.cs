@@ -22,7 +22,7 @@ namespace FiatSql.Cli.Queries
             onColumn: nameof(PersonCarRelationEntity.CarId))]
         public IEnumerable<CarEntity> Cars;
 
-        public static async Task<FiatSqlQueryResult<PersonQuery>> WithValidatedAdresses(DateTime createdAfter)
+        public static async Task<FiatSqlQueryResult<PersonQuery>> WithValidatedAdressesAsync(DateTime createdAfter)
         {
             return await Where(x => x.HomeAddress.Validated == true)
                 .And(x => x.Person.Creation >= createdAfter)

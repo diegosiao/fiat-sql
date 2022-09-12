@@ -11,17 +11,8 @@ namespace FiatSql.Cli
 {
     /// <summary>
     /// [Slink]
-    /// <para>- Portability;</para>
-    /// <para>- Efficienty first (not developer convenience first);</para>
-    /// <para>- Testability;</para>
-    /// <para>- CQRS oriented;</para>
-    /// 
-    /// Why not Linq?
-    /// 
-    /// <para>Linq is powerful. We all agree with that. But its complexity and size are overhelming in some scenarios.</para>
-    /// <para>In the other hand, Slink uses Dapper under the hood and has an efficiency first approach while keeping portability as the most important premise.</para>
-    /// 
-    /// <a href="https://github.com/diegosiao/fiat-sql"/>
+    /// <para>Turn C# code into translated SQL procedures that can run in all supported databases out of the box.</para>
+    /// <para><a href="https://github.com/diegosiao/fiat-sql"/></para>
     /// </summary>
     class Program
     {
@@ -33,56 +24,54 @@ namespace FiatSql.Cli
                 ConnectionFactory = () => new NpgsqlConnection(ConfigurationManager.ConnectionStrings["postgres"].ConnectionString),
                 EntitiesNamespaces = new[] { typeof(AddressEntity).Namespace },
                 ProceduresNamespaces = new[] { typeof(CustomerCreateCommand).Namespace },
+                StoredProceduresOnly = true,
                 SkipShemaValidation = false,
                 SkipProcedureValidation = false,
             });
 
-            var yesterdayAfternoon = DateTime.Today.AddHours(-11);
-            var personQueryResult = await PersonQuery.WithValidatedAdresses(yesterdayAfternoon);
+            // [1] ALL CRUD operations, sync and async
+            PersonEntity.Insert(DemonstrationData.PersonA);
+            await PersonEntity.InsertAsync(DemonstrationData.PersonB);
+                        
+            var dbPersonA = PersonEntity.GetById(DemonstrationData.PersonA.Id);
+            var dbPersonB = await PersonEntity.GetByIdAsync(DemonstrationData.PersonB.Id);
 
-            foreach(var item in personQueryResult.Items ?? Array.Empty<PersonQuery>())
-            {
-                Console.WriteLine(item.Person.Name);
-            }
+            PersonEntity.Upsert(DemonstrationData.PersonC);
+            await PersonEntity.UpsertAsync(DemonstrationData.PersonD);
 
-            PersonEntity person = new()
-            {
-                Id = Guid.NewGuid(),
-                Name = "John Smith Addams",
-                Birth = new DateTime(1980, 10, 10, 0, 0, 0, DateTimeKind.Utc),
-                Salary = 15488.55M,
-                IsPremium = true,
-                Creation = DateTime.UtcNow
-            };
+            // TODO Make it happen
+            //PersonEntity
+            //    .Update()
+            //    .Set(x => x.Birth, new DateTime(1981, 10, 10))
+            //    .Set(x => x.Salary, 21851M)
+            //    .Exec();
 
-            CarEntity car = new()
-            {
-                Id = Guid.NewGuid(),
-                Model = "GM Camaro",
-                ModelYear = 2016,
-                Plates = "CA4786DM",
-                Creation = DateTime.UtcNow
-            };
+            PersonEntity.Delete(DemonstrationData.PersonA.Id);
+            await PersonEntity.DeleteAsync(DemonstrationData.PersonB.Id);
 
-            PersonCarRelationEntity personCarRelation = new()
-            {
-                Id = Guid.NewGuid(),
-                PersonId = person.Id,
-                CarId = car.Id,
-                Creation = DateTime.UtcNow
-            };
+            // Where it shines the most: Stored Procedures for Commands and Queries
+            // Command
+            var command = new CustomerCreateCommand(
+                DemonstrationData.PersonA, 
+                DemonstrationData.CarA, 
+                DemonstrationData.PersonCarRelationA);
 
-            var command = new CustomerCreateCommand(person, car, personCarRelation);
             Debug.WriteLine(command.BuildSql());
 
             command.Call();
 
-            var personEntity = await PersonEntity.GetByIdAsync(person.Id);
-            personEntity.Birth = new DateTime(1995, 01, 01);
-
-            await PersonEntity.UpsertAsync(personEntity);
-
             Console.WriteLine(command.Error?.ToString() ?? $"{nameof(CustomerCreateCommand)} executed successfully");
+
+            // Query
+            var query = PersonQuery.WithValidatedAdressesAsync(DateTime.Now.AddDays(-1));
+
+            foreach(var item in query.Result.Items)
+            {
+                Console.WriteLine(item.Person.Name);
+            }
+
+            Console.WriteLine("Slink demonstration executed successfully. Neat, isn't?");
+            Console.WriteLine("\n\nThank you for downloading and using Slink. Have fun! ;)");
         }
     }
 }

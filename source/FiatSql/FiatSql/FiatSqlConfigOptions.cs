@@ -30,6 +30,12 @@ namespace FiatSql
         public string[] EntitiesNamespaces { get; set; }
 
         /// <summary>
+        /// If true, even queries and entity CRUD operations will be translated and compiled into Slink managed Stored Procedures.
+        /// <para>Default value is true.</para>
+        /// </summary>
+        public bool StoredProceduresOnly { get; set; }
+
+        /// <summary>
         /// The name of the table 
         /// </summary>
         public string ManagementTable { get; set; }
@@ -76,6 +82,8 @@ namespace FiatSql
             ManagementTable = "FiatManagement".Np();
             EntityManagementTable = "FiatManagementEntity".Np();
             ProcedureManagementTable = "FiatManagementProcedure".Np();
+
+            StoredProceduresOnly = true;
         }
     }
 }
