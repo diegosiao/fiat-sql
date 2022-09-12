@@ -1,21 +1,21 @@
-﻿using FiatSql.Cli.Entities;
+﻿using Slink.Cli.Entities;
 using System;
 
-namespace FiatSql.Cli
+namespace Slink.Cli
 {
     internal static class DemonstrationData
     {
-        public static PersonEntity PersonA = new PersonEntity
+        public static PersonEntity JohnSmith = new()
         {
             Id = Guid.NewGuid(),
-            Name = "John Smith Addams",
+            Name = "John Smith",
             Birth = new DateTime(1980, 10, 10, 0, 0, 0, DateTimeKind.Utc),
-            Salary = 15488.55M,
+            Salary = 155388.55M,
             IsPremium = true,
             Creation = DateTime.UtcNow
         };
 
-        public static PersonEntity PersonB = new PersonEntity
+        public static PersonEntity RobertMurdock = new()
         {
             Id = Guid.NewGuid(),
             Name = "Robert Murdock",
@@ -25,7 +25,7 @@ namespace FiatSql.Cli
             Creation = DateTime.UtcNow
         };
 
-        public static PersonEntity PersonC = new PersonEntity
+        public static PersonEntity AnnaSmith = new()
         {
             Id = Guid.NewGuid(),
             Name = "Anna Smith",
@@ -35,17 +35,17 @@ namespace FiatSql.Cli
             Creation = DateTime.UtcNow
         };
 
-        public static PersonEntity PersonD = new PersonEntity
+        public static PersonEntity ClaireLoughhead = new()
         {
             Id = Guid.NewGuid(),
-            Name = "John Smith Addams",
+            Name = "Claire Loughhead",
             Birth = new DateTime(1980, 10, 10, 0, 0, 0, DateTimeKind.Utc),
-            Salary = 15488.55M,
+            Salary = 210000M,
             IsPremium = true,
             Creation = DateTime.UtcNow
         };
 
-        public static CarEntity CarA = new CarEntity
+        public static CarEntity JohnSmithCar = new CarEntity
         {
             Id = Guid.NewGuid(),
             Model = "GM Camaro",
@@ -54,11 +54,12 @@ namespace FiatSql.Cli
             Creation = DateTime.UtcNow
         };
 
-        public static PersonCarRelationEntity PersonCarRelationA = new PersonCarRelationEntity
+        public static PersonCarRelationEntity PersonCarRelationA = new()
         {
             Id = Guid.NewGuid(),
-            PersonId = PersonA.Id,
-            CarId = CarA.Id,
+            PersonId = JohnSmith.Id,
+            CarId = JohnSmithCar.Id,
+            Info = "Some additional information regarding this relation",
             Creation = DateTime.UtcNow
         };
     }

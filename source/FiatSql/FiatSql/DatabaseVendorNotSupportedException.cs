@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace FiatSql
+namespace Slink
 {
     internal class DatabaseVendorNotSupportedException : Exception
     {

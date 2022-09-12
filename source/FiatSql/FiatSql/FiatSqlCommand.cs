@@ -6,7 +6,7 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace FiatSql
+namespace Slink
 {
     public abstract class FiatSqlCommand
     {
@@ -58,11 +58,11 @@ namespace FiatSql
             return ident.ToString();
         }
 
-        protected readonly FiatSqlConfigOptions Options;
+        protected readonly SlinkConfigOptions Options;
 
-        public FiatSqlCommand(FiatSqlConfigOptions options = null)
+        public FiatSqlCommand(SlinkConfigOptions options = null)
         {
-            Options = options ?? FiatSql.Options;
+            Options = options ?? Slink.Options;
             Parameters = new List<FiatDbParameter>();
             Sql = string.Empty;
             BodySql = new StringBuilder();
@@ -144,9 +144,9 @@ namespace FiatSql
             return string.Join(",\r\n", Options.Writer.ProcedureParameters(Parameters).Select(l => $"{GetIdentation(2)}{l}"));
         }
 
-        public void Call(FiatSqlConfigOptions options = null)
+        public void Call(SlinkConfigOptions options = null)
         {
-            var _options = options ?? FiatSql.Options;
+            var _options = options ?? Slink.Options;
 
             var dynamicParameters = new DynamicParameters();
 

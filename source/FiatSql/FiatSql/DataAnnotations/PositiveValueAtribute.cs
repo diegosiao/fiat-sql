@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Slink
+namespace Slink.DataAnnotations
 {
-    public class SlinkJoinAttribute : Attribute
+    internal class PositiveValueAtribute
     {
     }
 }

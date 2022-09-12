@@ -1,7 +1,15 @@
-﻿namespace FiatSql.Vendors
+﻿namespace Slink.Vendors
 {
+
     public interface IFiatTemplates
     {
+        const string DefaultNotes = @"/*
+IMPORTANT! This procedure was generated and is managed by .NET Slink. DO NOT EDIT IT.
+CREATION: _#creation#_
+CONTENT HASH: _#hash#_
+_#custom_notes#_
+";
+
         /// <summary>
         /// Placeholders:
         /// <para>_#schema#_</para>

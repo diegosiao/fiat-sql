@@ -3,7 +3,7 @@ using System.Data;
 using System.Data.Common;
 using System.Reflection;
 
-namespace FiatSql
+namespace Slink
 {
     public class FiatDbParameter : DbParameter
     {

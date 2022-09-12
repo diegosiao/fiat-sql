@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Diagnostics;
 
-namespace FiatSql
+namespace Slink
 {
-    public static class FiatSql
+    public static class Slink
     {
-        static internal FiatSqlConfigOptions Options { get; private set; }
+        static internal SlinkConfigOptions Options { get; private set; }
 
-        public static void Init(FiatSqlConfigOptions options)
+        public static void Init(SlinkConfigOptions options)
         {
             Options = options;
 

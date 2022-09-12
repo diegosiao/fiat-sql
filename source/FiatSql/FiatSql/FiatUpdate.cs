@@ -1,4 +1,4 @@
-﻿namespace FiatSql
+﻿namespace Slink
 {
     public class FiatUpdate<TEntity>
     {

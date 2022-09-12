@@ -1,16 +1,16 @@
-﻿using FiatSql.Cli.Entities;
-using FiatSql.Cli.Commands;
-using FiatSql.Cli.Queries;
+﻿using Slink.Cli.Entities;
+using Slink.Cli.Commands;
+using Slink.Cli.Queries;
 using Npgsql;
 using System;
 using System.Configuration;
 using System.Threading.Tasks;
 using System.Diagnostics;
 
-namespace FiatSql.Cli
+namespace Slink.Cli
 {
     /// <summary>
-    /// [Slink]
+    /// [Slink] or [FiatSql]
     /// <para>Turn C# code into translated SQL procedures that can run in all supported databases out of the box.</para>
     /// <para><a href="https://github.com/diegosiao/fiat-sql"/></para>
     /// </summary>
@@ -18,7 +18,7 @@ namespace FiatSql.Cli
     {
         static async Task Main(string[] args)
         {
-            FiatSql.Init(new FiatSqlConfigOptions
+            Slink.Init(new SlinkConfigOptions
             {
                 Vendor = FiatSqlVendors.Postgres,
                 ConnectionFactory = () => new NpgsqlConnection(ConfigurationManager.ConnectionStrings["postgres"].ConnectionString),
@@ -29,31 +29,47 @@ namespace FiatSql.Cli
                 SkipProcedureValidation = false,
             });
 
-            // [1] ALL CRUD operations, sync and async
-            PersonEntity.Insert(DemonstrationData.PersonA);
-            await PersonEntity.InsertAsync(DemonstrationData.PersonB);
-                        
-            var dbPersonA = PersonEntity.GetById(DemonstrationData.PersonA.Id);
-            var dbPersonB = await PersonEntity.GetByIdAsync(DemonstrationData.PersonB.Id);
+            // 1. Entity CRUD database operations, sync and async
 
-            PersonEntity.Upsert(DemonstrationData.PersonC);
-            await PersonEntity.UpsertAsync(DemonstrationData.PersonD);
+            // Note: CRUD methods have instance and static versions
+
+            // 1.1. Create
+            DemonstrationData.JohnSmith.Insert();
+            await DemonstrationData.RobertMurdock.InsertAsync();
+
+            // 1.2. Read
+            var dbPersonA = PersonEntity.GetById(DemonstrationData.JohnSmith.Id);
+            var dbPersonB = await PersonEntity.GetByIdAsync(DemonstrationData.RobertMurdock.Id);
+
+            var personsA = PersonEntity.GetAll();
+            var personsB = await PersonEntity.GetAllAsync();
+
+            // 1.3. Update
+            DemonstrationData.AnnaSmith.Upsert();
+            await DemonstrationData.AnnaSmith.UpsertAsync();
 
             // TODO Make it happen
-            //PersonEntity
-            //    .Update()
+            //await PersonEntity
+            //    .Update(DemonstrationData.PersonE)
             //    .Set(x => x.Birth, new DateTime(1981, 10, 10))
             //    .Set(x => x.Salary, 21851M)
-            //    .Exec();
+            //    .Where(x => x.Id != null)
+            //    .And(x => x.Birth > new DateTime(1980, 01, 01))
+            //    .ExecAsync(exceptionIfNotFound: false);
 
-            PersonEntity.Delete(DemonstrationData.PersonA.Id);
-            await PersonEntity.DeleteAsync(DemonstrationData.PersonB.Id);
+            // 1.4. Delete
+            DemonstrationData.AnnaSmith.Delete();
+            await DemonstrationData.ClaireLoughhead.DeleteAsync();
 
-            // Where it shines the most: Stored Procedures for Commands and Queries
-            // Command
+            //PersonEntity.DeleteById();
+            //PersonEntity.DeleteAllById();
+
+            // 2. Where Slink shines the most: Stored Procedures for Commands and Queries
+
+            // 2.1. Command
             var command = new CustomerCreateCommand(
-                DemonstrationData.PersonA, 
-                DemonstrationData.CarA, 
+                DemonstrationData.JohnSmith, 
+                DemonstrationData.JohnSmithCar, 
                 DemonstrationData.PersonCarRelationA);
 
             Debug.WriteLine(command.BuildSql());
@@ -62,13 +78,23 @@ namespace FiatSql.Cli
 
             Console.WriteLine(command.Error?.ToString() ?? $"{nameof(CustomerCreateCommand)} executed successfully");
 
-            // Query
-            var query = PersonQuery.WithValidatedAdressesAsync(DateTime.Now.AddDays(-1));
+            // 2.2. Query
+            var queryResult = await PersonQuery.WithValidatedAdressesAsync(DateTime.Now.AddDays(-1));
 
-            foreach(var item in query.Result.Items)
+            foreach(var item in queryResult.Items)
             {
                 Console.WriteLine(item.Person.Name);
             }
+
+            // 3. Reports
+
+            // 3.1. Surface report
+
+            // TODO Surface report (adoption, revision and fixes support)
+            
+            // 3.2. Portability report
+
+            // TODO Portability report
 
             Console.WriteLine("Slink demonstration executed successfully. Neat, isn't?");
             Console.WriteLine("\n\nThank you for downloading and using Slink. Have fun! ;)");

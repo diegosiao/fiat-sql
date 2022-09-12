@@ -1,7 +1,7 @@
-﻿using FiatSql.Mapping;
+﻿using Slink.Mapping;
 using System.Linq;
 
-namespace FiatSql
+namespace Slink
 {
     public class FiatInsert<TEntity> : FiatCrudOperation<TEntity>
     {

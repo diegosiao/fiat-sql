@@ -6,23 +6,23 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FiatSql
+namespace Slink
 {
-    public abstract class FiatSqlQuery<T>
+    public abstract class SlinkQuery<T>
     {
         /// <summary>
         /// This is a protected method to ensure the origin of procedure compilations.
         /// </summary>
         /// <param name="expression"></param>
         /// <returns></returns>
-        protected static FiatSqlFilterBuilder<T> Where(Expression<Func<T, object>> expression)
+        protected static SlinkFilterBuilder<T> Where(Expression<Func<T, object>> expression)
         {
-            var filterBuilder = new FiatSqlFilterBuilder<T>(expression);
+            var filterBuilder = new SlinkFilterBuilder<T>(expression);
             return filterBuilder;
         }
     }
 
-    public class FiatSqlFilterBuilder<T>
+    public class SlinkFilterBuilder<T>
     {
         private readonly List<Expression<Func<T, object>>> expressions;
 
@@ -30,7 +30,7 @@ namespace FiatSql
 
         private readonly List<MemberExpression> orderByDescExpressions;
 
-        internal FiatSqlFilterBuilder(Expression<Func<T, object>> expression)
+        internal SlinkFilterBuilder(Expression<Func<T, object>> expression)
         {
             expressions = new List<Expression<Func<T, object>>>
             {
@@ -40,13 +40,13 @@ namespace FiatSql
             orderByDescExpressions = new List<MemberExpression>();
         }
 
-        public FiatSqlFilterBuilder<T> And(Expression<Func<T, object>> expression)
+        public SlinkFilterBuilder<T> And(Expression<Func<T, object>> expression)
         {
             expressions.Add(expression);
             return this;
         }
 
-        public FiatSqlFilterBuilder<T> OrderByDesc(params Expression<Func<T, object>>[] properties)
+        public SlinkFilterBuilder<T> OrderByDesc(params Expression<Func<T, object>>[] properties)
         {
             foreach (var property in properties)
                 orderByAscExpressions.Add(property.Body as MemberExpression);
@@ -54,7 +54,7 @@ namespace FiatSql
             return this;
         }
 
-        public FiatSqlFilterBuilder<T> OrderByAsc(params Expression<Func<T, object>>[] properties)
+        public SlinkFilterBuilder<T> OrderByAsc(params Expression<Func<T, object>>[] properties)
         {
             foreach (var property in properties)
             {
@@ -79,7 +79,7 @@ namespace FiatSql
         /// <param name="cacheTimeSpan"></param>
         /// <returns></returns>
         /// <exception cref="NotImplementedException"></exception>
-        public async Task<FiatSqlQueryResult<T>> Exec(uint? pageSize = 1, uint? pageNumber = 1, long cacheTimeSpan = 0)
+        public async Task<SlinkQueryResult<T>> Exec(uint? pageSize = 1, uint? pageNumber = 1, long cacheTimeSpan = 0)
         {
             var stringBuilder = new StringBuilder();
 
@@ -131,7 +131,7 @@ namespace FiatSql
 
             Debug.WriteLine(stringBuilder.ToString());
 
-            return await Task.FromResult(default(FiatSqlQueryResult<T>));
+            return await Task.FromResult(default(SlinkQueryResult<T>));
         }
     }
 }

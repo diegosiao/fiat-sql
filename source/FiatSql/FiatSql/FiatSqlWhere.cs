@@ -3,17 +3,17 @@ using System.Diagnostics;
 using System.Linq.Expressions;
 using System.Reflection;
 
-namespace FiatSql
+namespace Slink
 {
-    public class FiatSqlWhere<TSource>
+    public class SlinkWhere<TSource>
     {
-        public FiatSqlWhere(Expression<Func<TSource, object>> expression)
+        public SlinkWhere(Expression<Func<TSource, object>> expression)
         {
             Debug.WriteLine(expression.Parameters[0].Type.FullName);
 
         }
 
-        public FiatSqlWhere(UnaryExpression expression)
+        public SlinkWhere(UnaryExpression expression)
         {
 
         }

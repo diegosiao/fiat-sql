@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 
-namespace FiatSql
+namespace Slink
 {
-    public class FiatSqlParseResult
+    public class SlinkParseResult
     {
         public string Sql { get; set; }
 

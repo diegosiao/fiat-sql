@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 
-namespace FiatSql.Vendors.Postgres
+namespace Slink.Vendors.Postgres
 {
     public class PostgresSqlWriter : IFiatSqlWriter
     {
-        public FiatSqlParseResult If(string sqlCondition)
+        public SlinkParseResult If(string sqlCondition)
         {
-            return new FiatSqlParseResult
+            return new SlinkParseResult
             {
                 Sql =
                 $"IF ({sqlCondition}) THEN " +
@@ -76,11 +76,11 @@ namespace FiatSql.Vendors.Postgres
             }
         }
 
-        public FiatSqlParseResult SelectById<TEntity>(object id)
+        public SlinkParseResult SelectById<TEntity>(object id)
         {
             var map = FiatCache.GetMap<TEntity>();
 
-            var sqlResult = new FiatSqlParseResult
+            var sqlResult = new SlinkParseResult
             {
                 Sql = $"SELECT * FROM {map.TableName} WHERE {map.PkColumnName} = :pId",
                 Params = new FiatDbParameter[] {

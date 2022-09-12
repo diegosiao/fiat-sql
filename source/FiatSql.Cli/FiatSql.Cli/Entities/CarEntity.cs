@@ -1,7 +1,10 @@
-﻿using FiatSql.Mapping;
+﻿using Slink.Mapping;
 
-namespace FiatSql.Cli.Entities
+namespace Slink.Cli.Entities
 {
+    /// <summary>
+    /// Class to demonstrate One to Many relation with Person
+    /// </summary>
     [FiatTable("car", "id", 10)]
     public class CarEntity : EntityBase<CarEntity>
     {

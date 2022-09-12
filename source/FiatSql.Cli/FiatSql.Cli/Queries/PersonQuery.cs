@@ -1,28 +1,28 @@
-﻿using FiatSql.Cli.Entities;
+﻿using Slink.Cli.Entities;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace FiatSql.Cli.Queries
+namespace Slink.Cli.Queries
 {
-    public class PersonQuery : FiatSqlQuery<PersonQuery>
+    public class PersonQuery : SlinkQuery<PersonQuery>
     {
-        [FiatSqlFrom]
+        [SlinkFrom]
         public PersonEntity Person;
 
-        [FiatSqlJoin]
+        [SlinkJoin]
         public AddressEntity HomeAddress;
 
-        [FiatSqlJoin]
+        [SlinkJoin]
         public AddressEntity WorkAddress;
 
-        [FiatSqlJoinToMany(
+        [SlinkJoinToMany(
             relationEntity: typeof(PersonCarRelationEntity), 
             fromColumn: nameof(PersonCarRelationEntity.PersonId), 
             onColumn: nameof(PersonCarRelationEntity.CarId))]
         public IEnumerable<CarEntity> Cars;
 
-        public static async Task<FiatSqlQueryResult<PersonQuery>> WithValidatedAdressesAsync(DateTime createdAfter)
+        public static async Task<SlinkQueryResult<PersonQuery>> WithValidatedAdressesAsync(DateTime createdAfter)
         {
             return await Where(x => x.HomeAddress.Validated == true)
                 .And(x => x.Person.Creation >= createdAfter)

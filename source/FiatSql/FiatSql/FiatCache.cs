@@ -1,8 +1,8 @@
-﻿using FiatSql.Mapping;
+﻿using Slink.Mapping;
 using System.Collections.Generic;
 using System.Reflection;
 
-namespace FiatSql
+namespace Slink
 {
     internal static class FiatCache
     {
@@ -28,7 +28,7 @@ namespace FiatSql
             var idProp = entityType.GetProperty("Id");
 
             if (idProp == null)
-                throw new FiatMissingIdPropertyException(entityType);
+                throw new SlinkMissingIdPropertyException(entityType);
 
             if(tableAttribute != null)
             {

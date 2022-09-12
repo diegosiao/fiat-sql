@@ -1,6 +1,6 @@
-﻿namespace FiatSql
+﻿namespace Slink
 {
-    public static class FiatSqlExtensions
+    public static class SlinkExtensions
     {
         /// <summary>
         /// Applys the specified or the global FiatNamingPolicy to the words provided.
@@ -10,7 +10,7 @@
         /// <param name="wordsToNamingPolicy"></param>
         public static string Np(this string wordsToNamingPolicy, FiatNamingPolicy? namingPolicy = null)
         {
-            var _namingPolicy = namingPolicy ?? FiatSql.Options.NamingPolicy;
+            var _namingPolicy = namingPolicy ?? Slink.Options.NamingPolicy;
 
             return wordsToNamingPolicy;
         }
@@ -20,7 +20,7 @@
             var idProp = typeof(T).GetProperty("Id");
 
             if (idProp == null)
-                throw new FiatMissingIdPropertyException(typeof(T));
+                throw new SlinkMissingIdPropertyException(typeof(T));
 
             return idProp.GetValue(entity);
         }

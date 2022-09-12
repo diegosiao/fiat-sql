@@ -1,6 +1,6 @@
-﻿using FiatSql.Cli.Entities;
+﻿using Slink.Cli.Entities;
 
-namespace FiatSql.Cli.Commands
+namespace Slink.Cli.Commands
 {
     /// <summary>
     /// Runs in a TRANSACTION.
@@ -20,7 +20,7 @@ namespace FiatSql.Cli.Commands
             PersonEntity person,
             CarEntity car,
             PersonCarRelationEntity personCarRelation,
-            FiatSqlConfigOptions options = null) : base(options)
+            SlinkConfigOptions options = null) : base(options)
         {
             // Implement this
             Insert(person);

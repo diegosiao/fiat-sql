@@ -1,11 +1,11 @@
-﻿using FiatSql.Vendors;
-using FiatSql.Vendors.Postgres;
+﻿using Slink.Vendors;
+using Slink.Vendors.Postgres;
 using System;
 using System.Data;
 
-namespace FiatSql
+namespace Slink
 {
-    public class FiatSqlConfigOptions
+    public class SlinkConfigOptions
     {
         public FiatSqlVendors Vendor { get; set; }
 
@@ -31,6 +31,7 @@ namespace FiatSql
 
         /// <summary>
         /// If true, even queries and entity CRUD operations will be translated and compiled into Slink managed Stored Procedures.
+        /// <para>Chances are this project will not support operations outside Stored Procedures because it is philosophically contradictory.</para>
         /// <para>Default value is true.</para>
         /// </summary>
         public bool StoredProceduresOnly { get; set; }
@@ -74,7 +75,7 @@ namespace FiatSql
             }
         }
 
-        public FiatSqlConfigOptions()
+        public SlinkConfigOptions()
         {
             // Default values
             NamingPolicy = FiatNamingPolicy.Lowercase;

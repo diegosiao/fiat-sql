@@ -1,12 +1,12 @@
 ﻿using System.Collections.Generic;
 
-namespace FiatSql.Vendors
+namespace Slink.Vendors
 {
     public interface IFiatSqlWriter
     {
-        FiatSqlParseResult If(string sqlCondition);
+        SlinkParseResult If(string sqlCondition);
 
-        FiatSqlParseResult SelectById<TEntity>(object id);
+        SlinkParseResult SelectById<TEntity>(object id);
 
         IEnumerable<string> ProcedureParameters(IEnumerable<FiatDbParameter> parameters);
     }

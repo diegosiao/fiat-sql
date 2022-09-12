@@ -1,4 +1,4 @@
-﻿namespace FiatSql.Builder
+﻿namespace Slink.Builder
 {
     public class FiatBuildMappings
     {

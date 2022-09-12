@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.32602.291
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32825.248
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FiatSql.Cli", "source\FiatSql.Cli\FiatSql.Cli\FiatSql.Cli.csproj", "{793C8C3A-16B7-48B6-80C0-C28B32BC51D8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Slink.Demonstration", "source\FiatSql.Cli\FiatSql.Cli\Slink.Demonstration.csproj", "{793C8C3A-16B7-48B6-80C0-C28B32BC51D8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FiatSql", "source\FiatSql\FiatSql\FiatSql.csproj", "{01F1FE38-6BF5-4E19-9D5A-36E4C5BAA2E4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Slink", "source\FiatSql\FiatSql\Slink.csproj", "{01F1FE38-6BF5-4E19-9D5A-36E4C5BAA2E4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

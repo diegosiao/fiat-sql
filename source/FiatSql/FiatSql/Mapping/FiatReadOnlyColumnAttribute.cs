@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace FiatSql.Mapping
+namespace Slink.Mapping
 {
     public class FiatReadOnlyColumnAttribute : Attribute
     {

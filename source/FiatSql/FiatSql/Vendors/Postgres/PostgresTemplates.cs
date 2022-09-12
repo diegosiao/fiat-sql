@@ -1,16 +1,16 @@
-﻿namespace FiatSql.Vendors.Postgres
+﻿namespace Slink.Vendors.Postgres
 {
     public class PostgresTemplates : IFiatTemplates
     {
         public string ProcedureTemplate =>
-@"CREATE OR REPLACE FUNCTION _#name#_(
+@$"CREATE OR REPLACE FUNCTION _#name#_(
 _#parameters#_
 )
 RETURNS INT4
 LANGUAGE plpgsql
 AS $function$
 BEGIN
-  -- FIATSQL:HASH _#hash#_
+{IFiatTemplates.DefaultNotes}
 
 _#body#_
 

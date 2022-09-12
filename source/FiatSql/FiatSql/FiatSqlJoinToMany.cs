@@ -1,10 +1,10 @@
 ﻿using System;
 
-namespace FiatSql
+namespace Slink
 {
-    public class FiatSqlJoinToManyAttribute : Attribute
+    public class SlinkJoinToManyAttribute : Attribute
     {
-        public FiatSqlJoinToManyAttribute(Type relationEntity, string fromColumn, string onColumn, bool leftJoin = false)
+        public SlinkJoinToManyAttribute(Type relationEntity, string fromColumn, string onColumn, bool leftJoin = false)
         {
 
         }

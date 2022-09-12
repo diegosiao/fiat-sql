@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Data;
 
-namespace FiatSql
+namespace Slink
 {
     public class DatabaseVendorDbTypeNotSupportedException : Exception
     {

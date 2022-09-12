@@ -2,20 +2,26 @@
 using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
-using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 
-namespace FiatSql
+namespace Slink
 {
-    public class FiatSqlEntity<T>
+    public class SlinkEntity<T>
     {
-        public static T Insert(T entity, FiatSqlConfigOptions options = null)
+        /* 
+         * static versions [SlinkEntity].(...):
+            - GetById(), GetAllById(), GetAll(), GetAllWhere()
+            - UpdateAllById(), UpdateAllWhere()
+            - DeleteById(), DeleteAllById();
+        */
+
+        public T Insert(SlinkConfigOptions options = null)
         {
-            var _options = options ?? FiatSql.Options;
+            var _options = options ?? Slink.Options;
 
             using (var connection = _options.ConnectionFactory())
             {
-                var selectByIdSql = _options.Writer.SelectById<T>(entity);
+                var selectByIdSql = _options.Writer.SelectById<T>(this);
 
                 return connection.QueryFirstOrDefault<T>(
                         selectByIdSql.Sql,
@@ -23,13 +29,13 @@ namespace FiatSql
             }
         }
 
-        public static async Task<T> InsertAsync(T entity, FiatSqlConfigOptions options = null)
+        public async Task<T> InsertAsync(SlinkConfigOptions options = null)
         {
-            var _options = options ?? FiatSql.Options;
+            var _options = options ?? Slink.Options;
 
             using (var connection = _options.ConnectionFactory())
             {
-                var selectByIdSql = _options.Writer.SelectById<T>(entity);
+                var selectByIdSql = _options.Writer.SelectById<T>(this);
 
                 return
                     await connection.QueryFirstOrDefaultAsync<T>(
@@ -38,9 +44,9 @@ namespace FiatSql
             }
         }
 
-        public static T GetById(object id, FiatSqlConfigOptions options = null)
+        public static T GetById(object id, SlinkConfigOptions options = null)
         {
-            var _options = options ?? FiatSql.Options;
+            var _options = options ?? Slink.Options;
 
             using (var connection = _options.ConnectionFactory())
             {
@@ -57,9 +63,9 @@ namespace FiatSql
         /// </summary>
         /// <param name="id"></param>
         /// <param name="options"></param>
-        public static async Task<T> GetByIdAsync(object id, FiatSqlConfigOptions options = null)
+        public static async Task<T> GetByIdAsync(object id, SlinkConfigOptions options = null)
         {
-            var _options = options ?? FiatSql.Options;
+            var _options = options ?? Slink.Options;
 
             using (var connection = _options.ConnectionFactory())
             {
@@ -76,18 +82,23 @@ namespace FiatSql
             return default(List<T>);
         }
 
+        public static async Task<IEnumerable<T>> GetAllAsync(uint? pageSize = 50, uint? pageNumber = 1)
+        {
+            return await Task.FromResult(new List<T>());
+        }
+
         /// <summary>
         /// Differently from 'Upsert' this method throws a 'SlinkEntityNotFoundException' if the entity does not exists.
         /// </summary>
         /// <param name="entity"></param>
         /// <param name="options"></param>
-        public static T Update(T entity, FiatSqlConfigOptions options = null)
+        public T Update(SlinkConfigOptions options = null)
         {
-            var _options = options ?? FiatSql.Options;
+            var _options = options ?? Slink.Options;
 
             using (var connection = _options.ConnectionFactory())
             {
-                var selectByIdSql = _options.Writer.SelectById<T>(entity.GetIdValue<T>());
+                var selectByIdSql = _options.Writer.SelectById<T>(this.GetIdValue());
 
                 return connection.QueryFirstOrDefault<T>(
                         selectByIdSql.Sql,
@@ -95,13 +106,13 @@ namespace FiatSql
             }
         }
 
-        public static async Task<T> UpdateAsync(T entity, FiatSqlConfigOptions options = null)
+        public async Task<T> UpdateAsync(SlinkConfigOptions options = null)
         {
-            var _options = options ?? FiatSql.Options;
+            var _options = options ?? Slink.Options;
 
             using (var connection = _options.ConnectionFactory())
             {
-                var selectByIdSql = _options.Writer.SelectById<T>(entity.GetIdValue<T>());
+                var selectByIdSql = _options.Writer.SelectById<T>(this.GetIdValue());
 
                 return
                     await connection.QueryFirstOrDefaultAsync<T>(
@@ -110,18 +121,18 @@ namespace FiatSql
             }
         }
 
-        public static void Update(Expression<Func<T, object>> columns)
+        public void Update(Expression<Func<T, object>> columns)
         {
 
         }
 
-        public static T Upsert(T entity, FiatSqlConfigOptions options = null)
+        public T Upsert(SlinkConfigOptions options = null)
         {
-            var _options = options ?? FiatSql.Options;
+            var _options = options ?? Slink.Options;
 
             using (var connection = _options.ConnectionFactory())
             {
-                var selectByIdSql = _options.Writer.SelectById<T>(entity.GetIdValue<T>());
+                var selectByIdSql = _options.Writer.SelectById<T>(this.GetIdValue());
 
                 return connection.QueryFirstOrDefault<T>(
                         selectByIdSql.Sql,
@@ -129,13 +140,13 @@ namespace FiatSql
             }
         }
 
-        public static async Task<T> UpsertAsync(T entity, FiatSqlConfigOptions options = null)
+        public async Task<T> UpsertAsync(SlinkConfigOptions options = null)
         {
-            var _options = options ?? FiatSql.Options;
+            var _options = options ?? Slink.Options;
 
             using (var connection = _options.ConnectionFactory())
             {
-                var selectByIdSql = _options.Writer.SelectById<T>(entity.GetIdValue<T>());
+                var selectByIdSql = _options.Writer.SelectById<T>(this.GetIdValue());
 
                 return
                     await connection.QueryFirstOrDefaultAsync<T>(
@@ -144,13 +155,13 @@ namespace FiatSql
             }
         }
 
-        public static T Delete(object id, FiatSqlConfigOptions options = null)
+        public T Delete(SlinkConfigOptions options = null)
         {
-            var _options = options ?? FiatSql.Options;
+            var _options = options ?? Slink.Options;
 
             using (var connection = _options.ConnectionFactory())
             {
-                var selectByIdSql = _options.Writer.SelectById<T>(id);
+                var selectByIdSql = _options.Writer.SelectById<T>(this.GetIdValue());
 
                 return connection.QueryFirstOrDefault<T>(
                         selectByIdSql.Sql,
@@ -158,13 +169,13 @@ namespace FiatSql
             }
         }
 
-        public static async Task<T> DeleteAsync(object id, FiatSqlConfigOptions options = null)
+        public async Task<T> DeleteAsync(SlinkConfigOptions options = null)
         {
-            var _options = options ?? FiatSql.Options;
+            var _options = options ?? Slink.Options;
 
             using (var connection = _options.ConnectionFactory())
             {
-                var selectByIdSql = _options.Writer.SelectById<T>(id);
+                var selectByIdSql = _options.Writer.SelectById<T>(this.GetIdValue());
 
                 return
                     await connection.QueryFirstOrDefaultAsync<T>(

@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 
-namespace FiatSql
+namespace Slink
 {
-    public class FiatSqlQueryResult<T>
+    public class SlinkQueryResult<T>
     {
         public bool HasMore { get; set; }
 

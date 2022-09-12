@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace FiatSql.Mapping
+namespace Slink.Mapping
 {
     /// <summary>
     /// A fiat table dotnet entity needs to strictly represent the database table and its columns.

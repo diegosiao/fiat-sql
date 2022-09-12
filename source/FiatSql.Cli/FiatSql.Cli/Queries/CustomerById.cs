@@ -1,7 +1,7 @@
-﻿using FiatSql.Cli.Entities;
+﻿using Slink.Cli.Entities;
 using System;
 
-namespace FiatSql.Cli.Queries
+namespace Slink.Cli.Queries
 {
     public class CustomerById
     {

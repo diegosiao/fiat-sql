@@ -1,4 +1,4 @@
-﻿namespace FiatSql
+﻿namespace Slink
 {
     /// <summary>
     /// The supported vendors and versions means that the same pseudo SQL generated outputs ran successfully in all combinations.

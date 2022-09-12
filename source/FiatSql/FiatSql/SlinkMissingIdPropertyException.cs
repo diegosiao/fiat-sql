@@ -1,12 +1,12 @@
 ﻿using System;
 
-namespace FiatSql
+namespace Slink
 {
-    internal class FiatMissingIdPropertyException : Exception
+    internal class SlinkMissingIdPropertyException : Exception
     {
         new public string Message { get; set; }
 
-        public FiatMissingIdPropertyException(Type entityType)
+        public SlinkMissingIdPropertyException(Type entityType)
         {
             Message = $"The 'Id' property is required to uniquely identify entities. Entity: {entityType.FullName}";
         }
