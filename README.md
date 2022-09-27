@@ -29,6 +29,8 @@ You are going to need Docker and Visual Studio 2022 or VS Code to follow these s
 
 1. Clone this repository;
 2. Run `docker-compose up -d --build` on root directory;
-3. Open and Run the Solution on root directory;
+3. Open and Run the Solution on root directory (run a second time with 'mysql' as argument in $/source/Slink.Cli/Properties/launchSettings.json);
 
-Neat, isn't? 😎
+Check data and Stored Procedures created on both MySQL and Postgres databases;
+
+Neat, huh? 😎

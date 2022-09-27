@@ -1,5 +1,8 @@
-/FiatSql/FiatSql/bin
-/FiatSql/FiatSql/obj
+/Slink/bin
+/Slink/obj
 
-/FiatSql.Cli/FiatSql.Cli/bin
-/FiatSql.Cli/FiatSql.Cli/obj
+/Slink.Cli/bin
+/Slink.Cli/obj
+
+/Slink.Postgres/bin
+/Slink.Postgres/obj

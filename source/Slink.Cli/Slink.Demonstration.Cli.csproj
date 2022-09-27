@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\FiatSql\FiatSql\Slink.csproj" />
+    <ProjectReference Include="..\Slink\Slink.csproj" />
   </ItemGroup>
 
 </Project>
