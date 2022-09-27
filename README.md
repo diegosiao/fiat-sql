@@ -1,21 +1,18 @@
 # Slink [🚧PoC🚧]
 
-Do you like not having your project coupled to a specific Database vendor? Yeah, neither do us.
-
-What about validating your code against schema and testing all your procedures on application startup? Nice, isn't?
-
-Turn C# code into translated SQL procedures that can run in all supported databases out of the box:
+Turn C# code into translated SQL Stored Procedures that can run in all supported databases out of the box:
 
 - Postgres;
 - MySQL;
 - Oracle;
 - SQL Server;
 
-## Why not .NET Linq?
+## Why not .NET Entity Framework?
 
-This project was born to satisfy a very specific business requirement to .NET developer teams:
+This project was born to satisfy a two very specific business requirements that could not be fully achieved using .NET EF:
 
-- **Access to read and/or write on databases should always be done using Stored Procedures (to allow processes of revision and approval from DBAs);**
+- **🟢 The application needs to be portable to all major SQL Database vendors;**
+- **⛔ Access to read or write operations on databases should ONLY be done using Stored Procedures (for security reasons and to allow processes of revision and approval from DBAs);**
 
 Besides that, Slink uses Dapper under the hood and has an efficiency first approach while keeping portability as the most important premise.
 
@@ -26,11 +23,12 @@ Besides that, Slink uses Dapper under the hood and has an efficiency first appro
 - CQRS orientation;
 - Testability (WIP);
 
-## Running Demonstration
+## Quick Start/Demonstration
 
-- You are going to need Docker and Visual Studio or VS Code;
+You are going to need Docker and Visual Studio 2022 or VS Code to follow these steps;
 
 1. Clone this repository;
-2. Run `docker-compose up -d --build` on $/source directory;
-3. Open and Run the Solution on $/Slink.sln;
+2. Run `docker-compose up -d --build` on root directory;
+3. Open and Run the Solution on root directory;
 
+Neat, isn't? 😎
