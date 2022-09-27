@@ -7,19 +7,21 @@ Turn C# code into translated SQL Stored Procedures that can run in all supported
 - Oracle;
 - SQL Server;
 
-## Why not .NET Entity Framework?
+## What are the benefits of using Slink?
 
-This project was born to satisfy a two very specific business requirements that could not be fully achieved using .NET EF:
+This project was born to satisfy two specific business requirements:
 
 - **🟢 The application needs to be portable to all major SQL Database vendors;**
 - **⛔ Access to read or write operations on databases should ONLY be done using Stored Procedures (for security reasons and to allow processes of revision and approval from DBAs);**
 
 Besides that, Slink uses Dapper under the hood and has an efficiency first approach while keeping portability as the most important premise.
 
+Stored Procedures are created in files that DBAs can easily track and apply in different environments after revision.
+
 ## Pillars of Slink
 
 - Portability;
-- Efficiency first (developer convenience is put after);
+- Efficiency first (developer convenience is put right after);
 - CQRS orientation;
 - Testability (WIP);
 
@@ -31,6 +33,6 @@ You are going to need Docker and Visual Studio 2022 or VS Code to follow these s
 2. Run `docker-compose up -d --build` on root directory;
 3. Open and Run the Solution on root directory (run a second time with 'mysql' as argument in $/source/Slink.Cli/Properties/launchSettings.json);
 
-Check data and Stored Procedures created on both MySQL and Postgres databases;
+Check data and Stored Procedures created on both MySQL and Postgres databases (for connection information refer to $/source/Slink.Cli/App.config);
 
 Neat, huh? 😎
