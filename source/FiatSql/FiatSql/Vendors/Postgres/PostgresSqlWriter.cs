@@ -1,21 +1,22 @@
-﻿using System;
+﻿using Slink.Mapping;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 
 namespace Slink.Vendors.Postgres
 {
-    public class PostgresSqlWriter : IFiatSqlWriter
+    public class PostgresSqlWriter : ISlinkSqlWriter
     {
+        public bool SupportsCreateOrReplace => true;
+
         public SlinkParseResult If(string sqlCondition)
         {
-            return new SlinkParseResult
-            {
-                Sql =
-                $"IF ({sqlCondition}) THEN " +
-                $"   {sqlCondition ?? "NULL;"}" +
-                "END IF"
-            };
+            var sqlResult = new SlinkParseResult();
+            sqlResult.Sql.AppendLine($"IF ({sqlCondition}) THEN ");
+            sqlResult.Sql.AppendLine($"   {sqlCondition ?? "NULL;"}");
+            sqlResult.Sql.AppendLine($"END IF");
+            return sqlResult;
         }
 
         public IEnumerable<string> ProcedureParameters(IEnumerable<FiatDbParameter> parameters)
@@ -80,15 +81,77 @@ namespace Slink.Vendors.Postgres
         {
             var map = FiatCache.GetMap<TEntity>();
 
-            var sqlResult = new SlinkParseResult
-            {
-                Sql = $"SELECT * FROM {map.TableName} WHERE {map.PkColumnName} = :pId",
-                Params = new FiatDbParameter[] {
-                    new FiatDbParameter("pId", id)
-                }
-            };
+            var sqlResult = new SlinkParseResult();
+            sqlResult.Sql.Append($"SELECT * FROM {map.TableName} WHERE {map.PkColumnName} = :pId");
+            sqlResult.Params.Add(new FiatDbParameter("pId", id));
 
             return sqlResult;
+        }
+
+        public SlinkParseResult Insert(Type entityType, object entity = null)
+        {
+            var parseResult = new SlinkParseResult();
+            var entityName = entityType.Name;
+
+            var fiatTableAttribute = entityType.GetCustomAttributes(true).FirstOrDefault(x => x is SlinkTableAttribute) as SlinkTableAttribute;
+
+            if (fiatTableAttribute != null)
+            {
+                entityName = fiatTableAttribute.Name;
+            }
+
+            var props = entityType
+                .GetProperties()
+                .Select(prop => new
+                {
+                    PropertyInfo = prop,
+                    prop.Name,
+                    ParameterName = prop.Name.ToLower(),
+                    Value = entityType.Equals(entity?.GetType()) ? prop.GetValue(entity) : null,
+                })
+                .ToArray();
+
+            parseResult.Sql.AppendLine($"INSERT INTO {entityName} (");
+
+            foreach (var prop in props)
+            {
+                parseResult.Sql.AppendLine($"  {prop.Name},");
+
+                var parameter = new FiatDbParameter
+                {
+                    ParameterName = prop.ParameterName,
+                    Direction = ParameterDirection.Input,
+                    DbType = DbType.String,
+                    PropertyInfo = prop.PropertyInfo,
+                    Value = prop.Value,
+                };
+
+                DbTypeToString(parameter);
+
+                parseResult.Params.Add(parameter);
+            }
+
+            parseResult.Sql = parseResult.Sql.Remove(parseResult.Sql.Length - 3, 3);
+
+            parseResult.Sql.AppendLine(")");
+            parseResult.Sql.AppendLine("VALUES (");
+
+            foreach (var prop in props)
+            {
+                if (prop.Name.Equals("CreatedBy"))
+                {
+                    parseResult.Sql.AppendLine($"  user,");
+                }
+                else
+                {
+                    parseResult.Sql.AppendLine($"  {prop.ParameterName},");
+                }
+            }
+
+            parseResult.Sql = parseResult.Sql.Remove(parseResult.Sql.Length - 3, 3);
+            parseResult.Sql.Append(");");
+
+            return parseResult;
         }
     }
 }

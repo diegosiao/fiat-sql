@@ -1,21 +1,21 @@
 version: "3.8"
 
 services:
-  fiatsql-postgres-db:
-    build: ../vendors/postgres
+  slink-postgres:
+    build: ./vendors/postgres
     restart: always
     environment:
       - POSTGRES_PASSWORD=pwd123!
     ports:
-      - 5432:5432
-  fiatsql-mysql-db:
-    build: ../vendors/mysql
+      - 5433:5432
+  slink-mysql:
+    build: ./vendors/mysql
     restart: always
     environment:
-      - MYSQL_DATABASE=example
-      - MYSQL_USER=fiatsql
+      - MYSQL_DATABASE=slink
+      - MYSQL_USER=slink
       - MYSQL_PASSWORD=pwd123!
       - MYSQL_ROOT_PASSWORD=pwd123!
     ports:
-      - 3306:3306
+      - 3307:3306
   

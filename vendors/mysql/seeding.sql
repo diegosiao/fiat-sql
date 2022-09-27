@@ -4,12 +4,13 @@
 	birth date NULL,
 	salary decimal NULL,
 	ispremium bit NOT NULL DEFAULT 0,
+	homeaddressid binary(16) NULL,
+	workaddressid binary(16) NULL,
 	creation date NOT NULL,
 	createdby varchar(250) NOT NULL,
 	lastupdate date,
 	lastupdatedby varchar(250)
 );
-
 
 ALTER TABLE person 
 ADD CONSTRAINT person_pk 
@@ -53,3 +54,5 @@ ALTER TABLE personcars
 ADD CONSTRAINT personcars_carid_fk
 FOREIGN KEY (carid) 
 REFERENCES car(id); 
+
+GRANT ALTER ROUTINE, CREATE ROUTINE, EXECUTE ON `slink`.`*` TO `slink`@`%`;

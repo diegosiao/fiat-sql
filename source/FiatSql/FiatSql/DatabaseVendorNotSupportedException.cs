@@ -5,7 +5,7 @@ namespace Slink
     internal class DatabaseVendorNotSupportedException : Exception
     {
         public DatabaseVendorNotSupportedException(
-            FiatSqlVendors vendor = FiatSqlVendors.Undefined, 
+            SlinkVendors vendor = SlinkVendors.Undefined, 
             string message = "The database vendor '{0}' is not yet supported. ") 
             : base(string.Format(message, vendor))
         {

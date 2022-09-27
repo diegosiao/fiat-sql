@@ -9,7 +9,7 @@ namespace Slink.Cli.Entities
     /// Class to demonstrate database operations and relations (<see cref="CarEntity"/> and <see cref="AddressEntity"/>)
     /// </summary>
     // [System.ComponentModel.DataAnnotations.Schema.Table()]
-    [FiatTable("person", "id")]
+    [SlinkTable("person", "id")]
     public class PersonEntity : EntityBase<PersonEntity>
     {
         [MaxLength(250)]

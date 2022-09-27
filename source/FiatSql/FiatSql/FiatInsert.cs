@@ -9,11 +9,11 @@ namespace Slink
         {
             var entityName = typeof(TEntity).Name;
 
-            var fiatTableAttribute = entity.GetType().GetCustomAttributes(true).FirstOrDefault(x => x is FiatTableAttribute);
+            var fiatTableAttribute = entity.GetType().GetCustomAttributes(true).FirstOrDefault(x => x is SlinkTableAttribute);
 
             if (fiatTableAttribute != null)
             {
-                entityName = ((FiatTableAttribute)fiatTableAttribute).Name;
+                entityName = ((SlinkTableAttribute)fiatTableAttribute).Name;
             }
 
             var props = typeof(TEntity)

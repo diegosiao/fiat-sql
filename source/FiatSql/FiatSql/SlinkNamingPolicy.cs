@@ -1,6 +1,6 @@
 ﻿namespace Slink
 {
-    public enum FiatNamingPolicy
+    public enum SlinkNamingPolicy
     {
         /// <summary>
         /// All text in lowercase

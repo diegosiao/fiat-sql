@@ -5,15 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Vendors\MySql2\MySql2Templates.cs" />
-    <Compile Remove="Vendors\MySql2\MySql2Writer.cs" />
-    <Compile Remove="Vendors\MySql\MySqlTemplates.cs" />
-    <Compile Remove="Vendors\MySql\MySqlWriter.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Vendors\MySql2\" />
-    <Folder Include="Vendors\MySql\" />
     <Folder Include="Vendors\SqlServer\" />
   </ItemGroup>
 

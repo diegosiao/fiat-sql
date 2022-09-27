@@ -4,7 +4,7 @@
     /// The supported vendors and versions means that the same pseudo SQL generated outputs ran successfully in all combinations.
     /// <para>To see all operations and environment used on tests visit <a href="https://github.com/diegosiao/fiat-sql"/></para>
     /// </summary>
-    public enum FiatSqlVendors
+    public enum SlinkVendors
     {
         Undefined,
 

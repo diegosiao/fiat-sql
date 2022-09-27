@@ -23,7 +23,7 @@ namespace Slink
             map = new FiatEntityMap();
 
             var entityType = typeof(T);
-            var tableAttribute = entityType.GetCustomAttribute<FiatTableAttribute>();
+            var tableAttribute = entityType.GetCustomAttribute<SlinkTableAttribute>();
 
             var idProp = entityType.GetProperty("Id");
 

@@ -3,7 +3,7 @@ using System;
 
 namespace Slink.Cli
 {
-    internal static class DemonstrationData
+    internal static class StaticData
     {
         public static PersonEntity JohnSmith = new()
         {

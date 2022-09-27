@@ -58,7 +58,7 @@ namespace Slink
         {
             foreach (var property in properties)
             {
-                if(property.Body is MemberExpression)
+                if (property.Body is MemberExpression)
                 {
                     orderByAscExpressions.Add(property.Body as MemberExpression);
                 }
@@ -111,7 +111,7 @@ namespace Slink
                         rightExpression = ((MemberExpression)operand.Right).Member.Name;
                     }
                     // variable (field)
-                    else if (operand.Right is ConstantExpression) 
+                    else if (operand.Right is ConstantExpression)
                     {
                         rightExpression = ((ConstantExpression)operand.Right).Value;
                     }
@@ -131,7 +131,13 @@ namespace Slink
 
             Debug.WriteLine(stringBuilder.ToString());
 
-            return await Task.FromResult(default(SlinkQueryResult<T>));
+            var result = new SlinkQueryResult<T>
+            {
+                HasMore = false,
+                Items = Array.Empty<T>(),
+            };
+
+            return await Task.FromResult(result);
         }
     }
 }

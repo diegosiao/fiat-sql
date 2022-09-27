@@ -1,13 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Slink.Vendors;
 
 namespace FiatSql.Vendors.MySql
 {
-    internal class MySqlTemplates : IFiatTemplates
+    internal class MySqlTemplates : ISlinkTemplates
     {
-        public string ProcedureTemplate => throw new NotImplementedException();
+        public string ProcedureTemplate => @"
+CREATE PROCEDURE _#schema#_._#name#_(
+_#parameters#_
+)
+BEGIN
+_#body#_
+END;
+";
+
+        public string DropProcedureTemplate => "DROP PROCEDURE IF EXISTS _#schema#_._#name#_;";
     }
 }

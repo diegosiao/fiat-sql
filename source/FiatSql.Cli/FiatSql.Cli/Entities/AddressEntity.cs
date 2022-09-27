@@ -5,7 +5,7 @@ namespace Slink.Cli.Entities
     /// <summary>
     /// Class to demonstrate One to One relation with Person
     /// </summary>
-    [FiatTable("address", "id")]
+    [SlinkTable("address", "id")]
     public class AddressEntity : EntityBase<AddressEntity>
     {
         public string Line1 { get; set; }

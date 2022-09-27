@@ -4,6 +4,8 @@
 	birth timestamp NULL,
 	salary decimal NULL,
 	ispremium bool NOT NULL DEFAULT cast(1 as bool),
+	homeaddressid uuid NULL,
+	workaddressid uuid NULL,
 	creation timestamp NOT NULL,
 	createdby varchar(250) NOT NULL,
 	lastupdate timestamp,

@@ -1,4 +1,4 @@
-# Slink
+# Slink [🚧PoC🚧]
 
 Do you like not having your project coupled to a specific Database vendor? Yeah, neither do us.
 
@@ -6,10 +6,10 @@ What about validating your code against schema and testing all your procedures o
 
 Turn C# code into translated SQL procedures that can run in all supported databases out of the box:
 
-- Oracle;
 - Postgres;
-- SQL Server;
 - MySQL;
+- Oracle;
+- SQL Server;
 
 ## Why not .NET Linq?
 
@@ -22,6 +22,15 @@ Besides that, Slink uses Dapper under the hood and has an efficiency first appro
 ## Pillars of Slink
 
 - Portability;
-- Efficiency first (not developer convenience first);
+- Efficiency first (developer convenience is put after);
 - CQRS orientation;
 - Testability (WIP);
+
+## Running Demonstration
+
+- You are going to need Docker and Visual Studio or VS Code;
+
+1. Clone this repository;
+2. Run `docker-compose up -d --build` on $/source directory;
+3. Open and Run the Solution on $/Slink.sln;
+

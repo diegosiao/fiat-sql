@@ -126,11 +126,11 @@ namespace Slink
 
         public string BuildSql()
         {
-            _sql = Options.Templates.ProcedureTemplate
-                .Replace("_#schema#_", "public")
-                .Replace("_#name#_", GetType().Name.ToLower())
-                .Replace("_#parameters#_", GetParametersSql().ToString())
-                .Replace("_#body#_", BodySql.ToString());
+            //_sql = Options.Templates.ProcedureTemplate
+            //    .Replace("_#schema#_", "public")
+            //    .Replace("_#name#_", GetType().Name.ToLower())
+            //    .Replace("_#parameters#_", GetParametersSql().ToString())
+            //    .Replace("_#body#_", BodySql.ToString());
 
             _hash = Convert.ToHexString(SHA1.HashData(Encoding.UTF8.GetBytes(_sql)));
 
@@ -139,26 +139,26 @@ namespace Slink
             return _sql;
         }
 
-        public string GetParametersSql()
-        {
-            return string.Join(",\r\n", Options.Writer.ProcedureParameters(Parameters).Select(l => $"{GetIdentation(2)}{l}"));
-        }
+        //public string GetParametersSql()
+        //{
+        //    return string.Join(",\r\n", Options.Writer.ProcedureParameters(Parameters).Select(l => $"{GetIdentation(2)}{l}"));
+        //}
 
         public void Call(SlinkConfigOptions options = null)
         {
-            var _options = options ?? Slink.Options;
+            //var _options = options ?? Slink.Options;
 
-            var dynamicParameters = new DynamicParameters();
+            //var dynamicParameters = new DynamicParameters();
 
-            // Called to update dbtypes
-            _ = Options.Writer.ProcedureParameters(Parameters);
+            //// Called to update dbtypes
+            //_ = Options.Writer.ProcedureParameters(Parameters);
 
-            Parameters.ForEach((p) => dynamicParameters.Add(p.ParameterName, p.Value, p.DbType, p.Direction));
+            //Parameters.ForEach((p) => dynamicParameters.Add(p.ParameterName, p.Value, p.DbType, p.Direction));
 
-            using (var connection = _options.ConnectionFactory())
-            {
-                connection.Execute(GetType().Name.ToLower(), param: dynamicParameters, commandType: CommandType.StoredProcedure);
-            }
+            //using (var connection = _options.ConnectionFactory())
+            //{
+            //    connection.Execute(GetType().Name.ToLower(), param: dynamicParameters, commandType: CommandType.StoredProcedure);
+            //}
         }
     }
 }

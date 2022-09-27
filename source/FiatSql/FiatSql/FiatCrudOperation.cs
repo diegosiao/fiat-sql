@@ -1,10 +1,17 @@
-﻿using Dapper;
-using System.Collections.Generic;
-using System.Data.Common;
+﻿using System.Collections.Generic;
 using System.Text;
 
 namespace Slink
 {
+    public enum SlinkCrudOperation 
+    { 
+        Insert,
+        Update,
+        Upsert,
+        GetById,
+        Delete,
+    }
+
     public class FiatCrudOperation<TEntity>
     {
         public List<FiatDbParameter> Parameters { get; set; }

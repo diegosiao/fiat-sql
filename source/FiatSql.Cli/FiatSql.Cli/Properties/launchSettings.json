@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Slink.Demonstration": {
+      "commandName": "Project",
+      "commandLineArgs": "postgres"
+    }
+  }
+}

@@ -1,76 +1,88 @@
-﻿using Slink.Cli.Entities;
-using Slink.Cli.Commands;
-using Slink.Cli.Queries;
+﻿using MySql.Data.MySqlClient;
 using Npgsql;
+using Slink.Cli.Commands;
+using Slink.Cli.Entities;
+using Slink.Cli.Queries;
 using System;
 using System.Configuration;
-using System.Threading.Tasks;
 using System.Diagnostics;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace Slink.Cli
 {
     /// <summary>
-    /// [Slink] or [FiatSql]
-    /// <para>Turn C# code into translated SQL procedures that can run in all supported databases out of the box.</para>
+    /// [Slink]
+    /// <para>Turn C# classes into translated SQL Stored Procedures and run your application against any supported databases out of the box.</para>
     /// <para><a href="https://github.com/diegosiao/fiat-sql"/></para>
     /// </summary>
     class Program
     {
         static async Task Main(string[] args)
         {
-            Slink.Init(new SlinkConfigOptions
+            Console.WriteLine("* * * * * * * * * * * * * * *");
+            Console.WriteLine("* *   S   L   I   N   K   * *");
+            Console.WriteLine("* * * * * * * * * * * * * * *");
+
+            // 🎉 Same C# code no matter what database.
+            var slinkOptions = new SlinkConfigOptions();
+
+            if ("mysql".Equals(args.FirstOrDefault()))
             {
-                Vendor = FiatSqlVendors.Postgres,
-                ConnectionFactory = () => new NpgsqlConnection(ConfigurationManager.ConnectionStrings["postgres"].ConnectionString),
-                EntitiesNamespaces = new[] { typeof(AddressEntity).Namespace },
-                ProceduresNamespaces = new[] { typeof(CustomerCreateCommand).Namespace },
-                StoredProceduresOnly = true,
-                SkipShemaValidation = false,
-                SkipProcedureValidation = false,
-            });
+                slinkOptions.AddNamespaces(
+                    namespaces: new Type[] { typeof(PersonEntity) },
+                    vendor: SlinkVendors.MySQL,
+                    databaseSchema: "slink",
+                    connectionFactory: () => new MySqlConnection(
+                        ConfigurationManager.ConnectionStrings["mysql"].ConnectionString));
+            }
+            else
+            {
+                slinkOptions.AddNamespaces(
+                    namespaces: new Type[] { typeof(PersonEntity) },
+                    databaseSchema: "public",
+                    vendor: SlinkVendors.Postgres,
+                    connectionFactory: () => new NpgsqlConnection(
+                        ConfigurationManager.ConnectionStrings["postgres"].ConnectionString));
+            }
+
+            Slink.Init(slinkOptions);
+
+            Console.WriteLine($"{Slink.ConfigFor<PersonEntity>().Vendor} vendor database selected. Valid arguments are: mysql and postgres");
 
             // 1. Entity CRUD database operations, sync and async
 
-            // Note: CRUD methods have instance and static versions
+            Console.WriteLine(" - Note: CRUD methods have instance and static versions");
 
             // 1.1. Create
-            DemonstrationData.JohnSmith.Insert();
-            await DemonstrationData.RobertMurdock.InsertAsync();
+            StaticData.JohnSmith.Insert();
+            await StaticData.RobertMurdock.InsertAsync();
+
+            StaticData.JohnSmith.Upsert();
+            await StaticData.JohnSmith.UpsertAsync();
 
             // 1.2. Read
-            var dbPersonA = PersonEntity.GetById(DemonstrationData.JohnSmith.Id);
-            var dbPersonB = await PersonEntity.GetByIdAsync(DemonstrationData.RobertMurdock.Id);
+            var dbPersonA = PersonEntity.GetById(StaticData.JohnSmith.Id);
+            var dbPersonB = await PersonEntity.GetByIdAsync(StaticData.RobertMurdock.Id);
 
             var personsA = PersonEntity.GetAll();
             var personsB = await PersonEntity.GetAllAsync();
 
             // 1.3. Update
-            DemonstrationData.AnnaSmith.Upsert();
-            await DemonstrationData.AnnaSmith.UpsertAsync();
-
-            // TODO Make it happen
-            //await PersonEntity
-            //    .Update(DemonstrationData.PersonE)
-            //    .Set(x => x.Birth, new DateTime(1981, 10, 10))
-            //    .Set(x => x.Salary, 21851M)
-            //    .Where(x => x.Id != null)
-            //    .And(x => x.Birth > new DateTime(1980, 01, 01))
-            //    .ExecAsync(exceptionIfNotFound: false);
+            StaticData.AnnaSmith.Update();
+            await StaticData.AnnaSmith.UpdateAsync();
 
             // 1.4. Delete
-            DemonstrationData.AnnaSmith.Delete();
-            await DemonstrationData.ClaireLoughhead.DeleteAsync();
+            StaticData.AnnaSmith.Delete();
+            await StaticData.ClaireLoughhead.DeleteAsync();
 
-            //PersonEntity.DeleteById();
-            //PersonEntity.DeleteAllById();
-
-            // 2. Where Slink shines the most: Stored Procedures for Commands and Queries
+            // 2. Slink shines the most: Stored Procedures for Commands and Queries for decoupling applications
 
             // 2.1. Command
             var command = new CustomerCreateCommand(
-                DemonstrationData.JohnSmith, 
-                DemonstrationData.JohnSmithCar, 
-                DemonstrationData.PersonCarRelationA);
+                StaticData.JohnSmith,
+                StaticData.JohnSmithCar,
+                StaticData.PersonCarRelationA);
 
             Debug.WriteLine(command.BuildSql());
 
@@ -81,7 +93,7 @@ namespace Slink.Cli
             // 2.2. Query
             var queryResult = await PersonQuery.WithValidatedAdressesAsync(DateTime.Now.AddDays(-1));
 
-            foreach(var item in queryResult.Items)
+            foreach (var item in queryResult.Items)
             {
                 Console.WriteLine(item.Person.Name);
             }
@@ -91,7 +103,7 @@ namespace Slink.Cli
             // 3.1. Surface report
 
             // TODO Surface report (adoption, revision and fixes support)
-            
+
             // 3.2. Portability report
 
             // TODO Portability report

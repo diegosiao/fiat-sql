@@ -1,16 +1,16 @@
 ﻿namespace Slink.Vendors.Postgres
 {
-    public class PostgresTemplates : IFiatTemplates
+    public class PostgresTemplates : ISlinkTemplates
     {
         public string ProcedureTemplate =>
-@$"CREATE OR REPLACE FUNCTION _#name#_(
+@$"CREATE OR REPLACE FUNCTION _#schema#_._#name#_(
 _#parameters#_
 )
 RETURNS INT4
 LANGUAGE plpgsql
 AS $function$
 BEGIN
-{IFiatTemplates.DefaultNotes}
+{ISlinkTemplates.DefaultNotes}
 
 _#body#_
 
@@ -18,5 +18,7 @@ _#body#_
 END;
 $function$
 ;";
+
+        public string DropProcedureTemplate => "DROP FUNCTION _#schema#_._#name#_;";
     }
 }

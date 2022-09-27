@@ -7,7 +7,7 @@ namespace Slink.Cli.Entities
     /// <summary>
     /// Class to demonstrate how to handle One to Many relations
     /// </summary>
-    [FiatTable("personcars", "id")]
+    [SlinkTable("personcars", "id")]
     public class PersonCarRelationEntity : EntityBase<PersonCarRelationEntity>
     {
         public Guid CarId { get; set; }
