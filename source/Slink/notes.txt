@@ -1,0 +1,55 @@
+﻿************************
+**** DATABASE FIRST ****
+************************
+
+/!\ LET DBAs DO THEIR JOB
+/!\ PROCEDURES ONLY
+
+GENERAL RECOMMENDED FLOW
+
+[ Shared DEV DB ] -> v1.0.0 -> Added a column, Added a table, etc. -> 
+	
+	[publish somehow those changes: NuGet, Git (local builds), etc.]
+	
+	dotnet slink build 	
+		-> /procedures/usp_person_insert.sql
+		   /procedures/usp_person_update.sql
+		   /procedures/usp_person_delete.sql
+		   /procedures/usp_person_select_id.sql (by id)
+		   /procedures/usp_person_select_all.sql (need config. Default $.crud: { all: false, where: false, page: false })
+		   /procedures/usp_person_select_where.sql
+		   /procedures/usp_person_select_page.sql
+		   
+		-> *.dll v1.0.1.20221015 (or NuGet package. With slink added schema validation logic)
+	
+	[APLICATION]
+		-> /custom-procedures/usp_person_inactivated.sql
+		-> /custom-procedures/usp_person_overdued.sql
+
+	
+- EF Migrations is cumbersome. Period. Applications changing schemas? Creating and droping tables? Really?
+
+- Stop trying to make databases be shaped by applications, let applications be shaped by databases; It is just easier. Applications are more fluid than databases.
+
+- Database SCHEMA VERSIONS 
+	-> *.v1.0.9.dll namespace [app].[DatabaseA].Tables; namespace [app].[DatabaseB].Tables; (...)
+
+-> slink.config.json
+
+- There is no easy solution :(
+
+- [ISlinkConvertableType] Mapping checks and reports:
+	- Maybe a single procedure and table using all data types for compatility checks;
+	- Consider database types first (they are many more) and check if there is a .NET correspondency;
+	- Conversions have total, partial (quirks list - decimals size), none or unknown level of compatibility;
+	- All .NET valid property types out of the box (string, int, long, decimal, double, float, bool, DateTime);
+	- Per entity/table: Check the existance of the column and compatibility between dotnet type and database type;
+	- SlinkConvertableTypeNotFoundException: Requires suggested code or database change or a Custom ISlinkConvertableType implementation;
+
+- Consider using Bogus to help setting up and bootstrap databases for development;
+
+- Focus on saving procedures to files; 
+	- Hashes should be calculated based on Entity Properties types, names and attributes;
+	- A tree of dependencies should be created for proper recompiling;
+
+

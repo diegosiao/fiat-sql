@@ -1,0 +1,18 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "https://raw.githubusercontent.com/diegosiao/fiat-sql/master/config/slink.config-schema.json",
+	"description": "Defines the Slink configuration file schema",
+	"properties": {
+		"databases": {
+            "$comment": "The databases",
+            "type": "array",
+            "additionalProperties": { "$dynamicRef": "#meta" },
+            "deprecated": false,
+            "default": [
+				{
+					"connectionString": ""
+				}
+			]
+        }
+	}
+}

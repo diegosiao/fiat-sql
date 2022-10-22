@@ -1,0 +1,748 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   sodipodi:docname="overview-diagram.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.18351571"
+     inkscape:cx="-1689.2287"
+     inkscape:cy="-1315.9636"
+     inkscape:window-width="1920"
+     inkscape:window-height="1009"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     inkscape:snap-others="false"
+     inkscape:snap-nodes="false" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g8857"
+       transform="translate(-570.19145,-750.74704)">
+      <g
+         id="g3161"
+         transform="translate(-10.233479,-20.90534)">
+        <rect
+           style="fill:#0088aa;stroke-width:0.166343;stroke-dasharray:0.166343, 0.49903"
+           id="rect3111"
+           width="87"
+           height="85.063103"
+           x="-436.84952"
+           y="-28.114077" />
+        <ellipse
+           style="fill:#00aad4;stroke-width:0.201981;stroke-dasharray:0.201981, 0.605943"
+           id="ellipse3113"
+           cx="-393.34952"
+           cy="-28.014933"
+           rx="43.5"
+           ry="20" />
+        <ellipse
+           style="fill:#0088aa;fill-opacity:1;stroke-width:0.201981;stroke-dasharray:0.201981, 0.605943"
+           id="ellipse3115"
+           cx="-393.34952"
+           cy="56.135597"
+           rx="43.5"
+           ry="20" />
+      </g>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         x="-431.80341"
+         y="71.366501"
+         id="text4573"><tspan
+           sodipodi:role="line"
+           id="tspan4571"
+           style="stroke-width:0.264583"
+           x="-431.80341"
+           y="71.366501">Production</tspan></text>
+    </g>
+    <g
+       id="g8865"
+       transform="translate(-303.33932,-769.36845)">
+      <g
+         id="g3109"
+         transform="translate(-17.30258,-7.9296116)">
+        <rect
+           style="fill:#d40000;stroke-width:0.166343;stroke-dasharray:0.166343, 0.49903"
+           id="rect868"
+           width="87"
+           height="85.063103"
+           x="-222.02913"
+           y="44.694176" />
+        <ellipse
+           style="fill:#d35f5f;stroke-width:0.201981;stroke-dasharray:0.201981, 0.605943"
+           id="path892"
+           cx="-178.52913"
+           cy="44.79332"
+           rx="43.5"
+           ry="20" />
+        <ellipse
+           style="fill:#d40000;fill-opacity:1;stroke-width:0.201981;stroke-dasharray:0.201981, 0.605943"
+           id="ellipse996"
+           cx="-178.52913"
+           cy="128.94385"
+           rx="43.5"
+           ry="20" />
+      </g>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         x="-231.40048"
+         y="158.59224"
+         id="text6359"><tspan
+           sodipodi:role="line"
+           id="tspan6357"
+           style="stroke-width:0.264583"
+           x="-231.40048"
+           y="158.59224">Development</tspan></text>
+    </g>
+    <g
+       id="g16350"
+       transform="translate(-59.803078,-68.377405)">
+      <circle
+         style="fill:#00aad4;fill-opacity:1;stroke-width:0.2;stroke-dasharray:0.2, 0.600001"
+         id="path8889"
+         cx="-663.25159"
+         cy="-442.18283"
+         r="22.347088" />
+      <rect
+         style="fill:#00aad4;fill-opacity:1;stroke-width:0.2;stroke-dasharray:0.2, 0.600001"
+         id="rect8913"
+         width="85.783981"
+         height="35.322815"
+         x="-706.14362"
+         y="-422.65036"
+         ry="16.580097" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:15.731px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.393275"
+         x="-680.19623"
+         y="-399.48157"
+         id="text10405"><tspan
+           sodipodi:role="line"
+           id="tspan10403"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Segoe UI';-inkscape-font-specification:'Segoe UI Bold';fill:#ffffff;stroke-width:0.393275"
+           x="-680.19623"
+           y="-399.48157">DBA</tspan></text>
+    </g>
+    <g
+       id="g16360"
+       transform="translate(250.06197,156.4684)">
+      <g
+         id="g20552"
+         transform="translate(21.626214,-48.298544)">
+        <circle
+           style="fill:#00aad4;fill-opacity:1;stroke-width:0.2;stroke-dasharray:0.2, 0.600001"
+           id="circle16352"
+           cx="-663.25159"
+           cy="-442.18283"
+           r="22.347088" />
+        <rect
+           style="fill:#00aad4;fill-opacity:1;stroke-width:0.2;stroke-dasharray:0.2, 0.600001"
+           id="rect16354"
+           width="85.783981"
+           height="35.322815"
+           x="-706.14362"
+           y="-422.65036"
+           ry="16.580097" />
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-weight:normal;font-size:15.731px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.393275"
+           x="-680.19623"
+           y="-399.48157"
+           id="text16358"><tspan
+             sodipodi:role="line"
+             id="tspan16356"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Segoe UI';-inkscape-font-specification:'Segoe UI Bold';fill:#ffffff;stroke-width:0.393275"
+             x="-680.19623"
+             y="-399.48157">DEV</tspan></text>
+      </g>
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="-149.44461"
+       y="-780.34412"
+       id="text17640"><tspan
+         sodipodi:role="line"
+         id="tspan17638"
+         style="stroke-width:0.264583"
+         x="-149.44461"
+         y="-780.34412">/db-repository</tspan></text>
+    <g
+       id="g23570"
+       transform="translate(93.33375,452.51197)">
+      <g
+         id="g21243"
+         transform="translate(1.0194692,2.0389387)">
+        <path
+           id="rect20576"
+           style="fill:#cccccc;stroke:#000000;stroke-width:0.18541;stroke-miterlimit:4;stroke-dasharray:none"
+           d="m -639.25602,-543.53888 h 39.61599 v 67.04126 h -47.70464 v -57.70439 z"
+           sodipodi:nodetypes="cccccc" />
+        <path
+           style="fill:none;stroke:#000000;stroke-width:0.245283px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           d="m -647.34466,-534.202 8.52673,2.03893"
+           id="path21156" />
+        <path
+           style="fill:none;stroke:#000000;stroke-width:0.245283px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           d="m -639.25602,-543.53888 0.43809,11.37581"
+           id="path21158" />
+      </g>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         x="-640.32452"
+         y="-484.54572"
+         id="text21247"><tspan
+           sodipodi:role="line"
+           id="tspan21245"
+           style="stroke-width:0.264583"
+           x="-640.32452"
+           y="-484.54572">DDL</tspan></text>
+    </g>
+    <g
+       id="g23562"
+       transform="translate(383.61247,159.52681)">
+      <g
+         id="g23560"
+         transform="translate(21.626214,-48.298544)">
+        <circle
+           style="fill:#00aad4;fill-opacity:1;stroke-width:0.2;stroke-dasharray:0.2, 0.600001"
+           id="circle23552"
+           cx="-663.25159"
+           cy="-442.18283"
+           r="22.347088" />
+        <rect
+           style="fill:#00aad4;fill-opacity:1;stroke-width:0.2;stroke-dasharray:0.2, 0.600001"
+           id="rect23554"
+           width="85.783981"
+           height="35.322815"
+           x="-706.14362"
+           y="-422.65036"
+           ry="16.580097" />
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-weight:normal;font-size:15.731px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.393275"
+           x="-680.19623"
+           y="-399.48157"
+           id="text23558"><tspan
+             sodipodi:role="line"
+             id="tspan23556"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Segoe UI';-inkscape-font-specification:'Segoe UI Bold';fill:#ffffff;stroke-width:0.393275"
+             x="-680.19623"
+             y="-399.48157">DEV</tspan></text>
+      </g>
+    </g>
+    <path
+       style="fill:none;stroke:#008000;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:3, 6;stroke-dashoffset:0;stroke-opacity:1"
+       d="m -409.77804,-269.71866 -1.1244,18.65216 -279.49869,-0.98744 -1.29777,-183.2616"
+       id="path24037"
+       sodipodi:nodetypes="cccc" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="-635.79608"
+       y="-268.47028"
+       id="text25859"><tspan
+         sodipodi:role="line"
+         id="tspan25857"
+         style="stroke-width:0.264583"
+         x="-635.79608"
+         y="-268.47028">customer-contact-support</tspan></text>
+    <path
+       style="fill:none;stroke:#0000ff;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:3, 6;stroke-dashoffset:0;stroke-opacity:1"
+       d="m -267.74189,-267.37981 -1.17257,46.07412 -438.29835,-0.95747 -0.0593,-213.03128"
+       id="path30948"
+       sodipodi:nodetypes="cccc" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="-619.72473"
+       y="-195.6657"
+       id="text30952"><tspan
+         sodipodi:role="line"
+         id="tspan30950"
+         style="stroke-width:0.264583"
+         x="-619.72473"
+         y="-195.6657">reset-password-bug</tspan></text>
+    <g
+       id="g46998"
+       transform="translate(51.570665,-100.49166)">
+      <g
+         id="g36723"
+         transform="matrix(0.60220412,0,0,0.60220412,-23.015692,-236.5425)"
+         style="fill:#d40000;fill-opacity:1">
+        <rect
+           style="fill:#d40000;fill-opacity:1;stroke:#000000;stroke-width:0.0719733;stroke-miterlimit:4;stroke-dasharray:none"
+           id="rect36555"
+           width="41.456612"
+           height="27.515451"
+           x="-214.15259"
+           y="-544.86993" />
+        <rect
+           style="fill:#d40000;fill-opacity:1;stroke:#000000;stroke-width:0.0719733;stroke-miterlimit:4;stroke-dasharray:none"
+           id="rect36559"
+           width="13.574287"
+           height="3.6687372"
+           x="-186.27026"
+           y="-548.5387" />
+      </g>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         x="-120.29743"
+         y="-554.52924"
+         id="text36727"><tspan
+           sodipodi:role="line"
+           id="tspan36725"
+           style="stroke-width:0.264583"
+           x="-120.29743"
+           y="-554.52924">/Procedures</tspan></text>
+      <g
+         id="g38473"
+         transform="matrix(0.60220412,0,0,0.60220412,-23.015692,-270.67592)"
+         style="fill:#d40000;fill-opacity:1">
+        <rect
+           style="fill:#d40000;fill-opacity:1;stroke:#000000;stroke-width:0.0719733;stroke-miterlimit:4;stroke-dasharray:none"
+           id="rect38469"
+           width="41.456612"
+           height="27.515451"
+           x="-214.15259"
+           y="-544.86993" />
+        <rect
+           style="fill:#d40000;fill-opacity:1;stroke:#000000;stroke-width:0.0719733;stroke-miterlimit:4;stroke-dasharray:none"
+           id="rect38471"
+           width="13.574287"
+           height="3.6687372"
+           x="-186.27026"
+           y="-548.5387" />
+      </g>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         x="-120.29743"
+         y="-588.38361"
+         id="text38477"><tspan
+           sodipodi:role="line"
+           id="tspan38475"
+           style="stroke-width:0.264583"
+           x="-120.29743"
+           y="-588.38361">/Model</tspan></text>
+      <g
+         id="g60930"
+         transform="matrix(0.60220412,0,0,0.60220412,-22.249539,-205.5924)"
+         style="fill:#ffe680">
+        <rect
+           style="fill:#ffe680;fill-opacity:1;stroke:#000000;stroke-width:0.0719733;stroke-miterlimit:4;stroke-dasharray:none"
+           id="rect60926"
+           width="41.456612"
+           height="27.515451"
+           x="-214.15259"
+           y="-544.86993" />
+        <rect
+           style="fill:#ffe680;fill-opacity:1;stroke:#000000;stroke-width:0.0719733;stroke-miterlimit:4;stroke-dasharray:none"
+           id="rect60928"
+           width="13.574287"
+           height="3.6687372"
+           x="-186.27026"
+           y="-548.5387" />
+      </g>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         x="-119.53128"
+         y="-523.57916"
+         id="text60934"><tspan
+           sodipodi:role="line"
+           id="tspan60932"
+           style="stroke-width:0.264583"
+           x="-119.53128"
+           y="-523.57916">/Other</tspan></text>
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="-151.30374"
+       y="-739.82739"
+       id="text42146"><tspan
+         sodipodi:role="line"
+         id="tspan42144"
+         style="stroke-width:0.264583"
+         x="-151.30374"
+         y="-739.82739">Project.Data.csproj</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="-384.28879"
+       y="-657.49774"
+       id="text44826"><tspan
+         sodipodi:role="line"
+         id="tspan44824"
+         style="stroke-width:0.264583"
+         x="-384.28879"
+         y="-657.49774">&gt; dotnet build</tspan></text>
+    <path
+       sodipodi:type="star"
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1.16935;stroke-miterlimit:4;stroke-dasharray:none"
+       id="path45443"
+       inkscape:flatsided="false"
+       sodipodi:sides="3"
+       sodipodi:cx="-1009.5156"
+       sodipodi:cy="-2543.0547"
+       sodipodi:r1="61.649807"
+       sodipodi:r2="30.824903"
+       sodipodi:arg1="0"
+       sodipodi:arg2="1.0471976"
+       inkscape:rounded="0"
+       inkscape:randomized="0"
+       d="m -947.86582,-2543.0547 -46.23735,26.6952 -46.23733,26.6951 v -53.3903 -53.3903 l 46.23733,26.6952 z"
+       transform="matrix(0.17095339,0,0,0.17111852,-47.307686,-224.16345)"
+       inkscape:transform-center-x="-2.6348084"
+       inkscape:transform-center-y="6.1788338e-06" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="-129.7453"
+       y="-512.61823"
+       id="text45547"><tspan
+         sodipodi:role="line"
+         id="tspan45545"
+         style="stroke-width:0.264583"
+         x="-129.7453"
+         y="-512.61823">Project.Data.dll</tspan><tspan
+         sodipodi:role="line"
+         style="stroke-width:0.264583"
+         x="-129.7453"
+         y="-499.3891"
+         id="tspan73276">Project.Data.pdb</tspan><tspan
+         sodipodi:role="line"
+         style="stroke-width:0.264583"
+         x="-129.7453"
+         y="-486.15997"
+         id="tspan74424">Project.Data.xml</tspan></text>
+    <g
+       id="g47164"
+       transform="translate(527.35766,156.4684)">
+      <g
+         id="g47162"
+         transform="translate(21.626214,-48.298544)">
+        <circle
+           style="fill:#00aad4;fill-opacity:1;stroke-width:0.2;stroke-dasharray:0.2, 0.600001"
+           id="circle47154"
+           cx="-663.25159"
+           cy="-442.18283"
+           r="22.347088" />
+        <rect
+           style="fill:#00aad4;fill-opacity:1;stroke-width:0.2;stroke-dasharray:0.2, 0.600001"
+           id="rect47156"
+           width="85.783981"
+           height="35.322815"
+           x="-706.14362"
+           y="-422.65036"
+           ry="16.580097" />
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-weight:normal;font-size:15.731px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.393275"
+           x="-680.19623"
+           y="-399.48157"
+           id="text47160"><tspan
+             sodipodi:role="line"
+             id="tspan47158"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Segoe UI';-inkscape-font-specification:'Segoe UI Bold';fill:#ffffff;stroke-width:0.393275"
+             x="-680.19623"
+             y="-399.48157">DEV</tspan></text>
+      </g>
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="-131.93387"
+       y="-715.36011"
+       id="text50895"><tspan
+         sodipodi:role="line"
+         id="tspan50893"
+         style="stroke-width:0.264583"
+         x="-131.93387"
+         y="-715.36011">[Pre-build Event] &gt; slink</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -125.81703,-701.08762 -1.01946,77.47968"
+       id="path56312" />
+    <path
+       style="fill:none;stroke:#008000;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:3, 6;stroke-dashoffset:0;stroke-opacity:1"
+       d="m -386.03338,-374.98596 0.42297,-57.66925 280.9548,-1.38769 0.18593,-31.08682"
+       id="path75159"
+       sodipodi:nodetypes="cccc" />
+    <g
+       id="g75885"
+       transform="matrix(0.42577485,0,0,0.42641608,178.27104,-371.59444)"
+       style="stroke-width:2.34689">
+      <g
+         id="g75879"
+         transform="translate(1.0194692,2.0389387)"
+         style="stroke-width:2.34689">
+        <path
+           id="path75873"
+           style="fill:#cccccc;stroke:#000000;stroke-width:0.435137;stroke-miterlimit:4;stroke-dasharray:none"
+           d="m -639.25602,-543.53888 h 39.61599 v 67.04126 h -47.70464 v -57.70439 z"
+           sodipodi:nodetypes="cccccc" />
+        <path
+           style="fill:none;stroke:#000000;stroke-width:0.575653px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           d="m -647.34466,-534.202 8.52673,2.03893"
+           id="path75875" />
+        <path
+           style="fill:none;stroke:#000000;stroke-width:0.575653px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           d="m -639.25602,-543.53888 0.43809,11.37581"
+           id="path75877" />
+      </g>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.620948"
+         x="-640.32452"
+         y="-484.54572"
+         id="text75883"><tspan
+           sodipodi:role="line"
+           id="tspan75881"
+           style="stroke-width:0.620948"
+           x="-640.32452"
+           y="-484.54572">JSON</tspan></text>
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="-68.676933"
+       y="-585.19769"
+       id="text78365"><tspan
+         sodipodi:role="line"
+         id="tspan78363"
+         style="stroke-width:0.264583"
+         x="-68.676933"
+         y="-585.19769">slink.config.json</tspan></text>
+    <path
+       style="fill:none;stroke:#008000;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:3, 6;stroke-dashoffset:0;stroke-opacity:1"
+       d="m -695.56518,-548.97369 0.95318,-123.07921 124.44176,-1.2054"
+       id="path79041"
+       sodipodi:nodetypes="ccc" />
+    <path
+       style="fill:none;stroke:#0000ff;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:3, 6;stroke-dashoffset:0;stroke-opacity:1"
+       d="m -570.00011,-699.74603 -141.56435,1.01926 -0.0551,151.64795"
+       id="path79277"
+       sodipodi:nodetypes="ccc" />
+    <path
+       style="fill:none;stroke:#0000ff;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:3, 6;stroke-dashoffset:0;stroke-opacity:1"
+       d="m -261.17872,-375.79491 -0.48228,-32.3851 h 190.696891 l 0.989737,-57.69174"
+       id="path79477"
+       sodipodi:nodetypes="cccc" />
+    <path
+       sodipodi:type="star"
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1.16935;stroke-miterlimit:4;stroke-dasharray:none"
+       id="path80114"
+       inkscape:flatsided="false"
+       sodipodi:sides="3"
+       sodipodi:cx="-1009.5156"
+       sodipodi:cy="-2543.0547"
+       sodipodi:r1="61.649807"
+       sodipodi:r2="30.824903"
+       sodipodi:arg1="0"
+       sodipodi:arg2="1.0471976"
+       inkscape:rounded="0"
+       inkscape:randomized="0"
+       d="m -947.86582,-2543.0547 -46.23735,26.6952 -46.23733,26.6951 v -53.3903 -53.3903 l 46.23733,26.6952 z"
+       transform="matrix(0,0.17095339,-0.17111852,0,-519.9352,-372.99355)"
+       inkscape:transform-center-x="9.7180805e-06"
+       inkscape:transform-center-y="2.6348131" />
+    <path
+       style="fill:none;stroke:#008000;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m -320.45334,-127.21956 -65.01819,-0.4017 0.86485,-146.21855"
+       id="path80116"
+       sodipodi:nodetypes="ccc" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="-295.47849"
+       y="-135.73515"
+       id="text80470"><tspan
+         sodipodi:role="line"
+         id="tspan80468"
+         style="stroke-width:0.264583"
+         x="-295.47849"
+         y="-135.73515">[C#] Project.Cli.csproj</tspan><tspan
+         sodipodi:role="line"
+         style="stroke-width:0.264583"
+         x="-295.47849"
+         y="-122.50603"
+         id="tspan84202">[C#] Project.Commands.csproj</tspan><tspan
+         sodipodi:role="line"
+         style="stroke-width:0.264583"
+         x="-295.47849"
+         y="-109.2769"
+         id="tspan84204">[C#] Project.Queries.csproj</tspan></text>
+    <path
+       style="fill:none;stroke:#0000ff;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m -247.78463,-160.26806 0.86485,-110.68826"
+       id="path85313"
+       sodipodi:nodetypes="cc" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="-1199.5338"
+       y="-334.48544"
+       id="text88412"><tspan
+         sodipodi:role="line"
+         id="tspan88410"
+         style="stroke-width:0.264583"
+         x="-1199.5338"
+         y="-334.48544">1. Create a feature branch</tspan><tspan
+         sodipodi:role="line"
+         style="stroke-width:0.264583"
+         x="-1199.5338"
+         y="-321.25632"
+         id="tspan88414" /><tspan
+         sodipodi:role="line"
+         style="stroke-width:0.264583"
+         x="-1199.5338"
+         y="-308.02719"
+         id="tspan88426">2. Determine the database changes required</tspan><tspan
+         sodipodi:role="line"
+         style="stroke-width:0.264583"
+         x="-1199.5338"
+         y="-294.79807"
+         id="tspan88416">    and/or write idempotent transactional scritps </tspan><tspan
+         sodipodi:role="line"
+         style="stroke-width:0.264583"
+         x="-1199.5338"
+         y="-281.56894"
+         id="tspan108859">    to apply those changes</tspan><tspan
+         sodipodi:role="line"
+         style="stroke-width:0.264583"
+         x="-1199.5338"
+         y="-268.33981"
+         id="tspan88418" /><tspan
+         sodipodi:role="line"
+         style="stroke-width:0.264583"
+         x="-1199.5338"
+         y="-255.11067"
+         id="tspan88424">3. Make a Pull Request to development branch so the DBA</tspan><tspan
+         sodipodi:role="line"
+         style="stroke-width:0.264583"
+         x="-1199.5338"
+         y="-241.88155"
+         id="tspan88428">    or CI/CD can apply on development database and </tspan><tspan
+         sodipodi:role="line"
+         style="stroke-width:0.264583"
+         x="-1199.5338"
+         y="-228.65244"
+         id="tspan88434">    update Data.dll (slink)</tspan><tspan
+         sodipodi:role="line"
+         style="stroke-width:0.264583"
+         x="-1199.5338"
+         y="-215.42331"
+         id="tspan91994" /><tspan
+         sodipodi:role="line"
+         style="stroke-width:0.264583"
+         x="-1199.5338"
+         y="-202.19418"
+         id="tspan91996">4. Implement the feature in application (backend and/or</tspan><tspan
+         sodipodi:role="line"
+         style="stroke-width:0.264583"
+         x="-1199.5338"
+         y="-188.96506"
+         id="tspan91998">    frontend)</tspan><tspan
+         sodipodi:role="line"
+         style="stroke-width:0.264583"
+         x="-1199.5338"
+         y="-175.73593"
+         id="tspan92000" /><tspan
+         sodipodi:role="line"
+         style="stroke-width:0.264583"
+         x="-1199.5338"
+         y="-162.50681"
+         id="tspan92002">5. Make a Pull Request to production so DBA or CI/CD can</tspan><tspan
+         sodipodi:role="line"
+         style="stroke-width:0.264583"
+         x="-1199.5338"
+         y="-149.27768"
+         id="tspan92004">    apply database changes on production and update </tspan><tspan
+         sodipodi:role="line"
+         style="stroke-width:0.264583"
+         x="-1199.5338"
+         y="-136.04855"
+         id="tspan93734">    Data.dll (DDL, DML, and/or seeding was already </tspan><tspan
+         sodipodi:role="line"
+         style="stroke-width:0.264583"
+         x="-1199.5338"
+         y="-122.81944"
+         id="tspan98830">    validated</tspan><tspan
+         sodipodi:role="line"
+         style="stroke-width:0.264583"
+         x="-1199.5338"
+         y="-109.59032"
+         id="tspan102361">         - Apply schema changes</tspan><tspan
+         sodipodi:role="line"
+         style="stroke-width:0.264583"
+         x="-1199.5338"
+         y="-96.361183"
+         id="tspan103287">         - Apply data changes or seeding</tspan><tspan
+         sodipodi:role="line"
+         style="stroke-width:0.264583"
+         x="-1199.5338"
+         y="-83.132065"
+         id="tspan103289">         - Compile procedures</tspan><tspan
+         sodipodi:role="line"
+         style="stroke-width:0.264583"
+         x="-1199.5338"
+         y="-69.902939"
+         id="tspan103291">         - Run &gt; dotnet build *.Data.csproj (slink)</tspan><tspan
+         sodipodi:role="line"
+         style="stroke-width:0.264583"
+         x="-1199.5338"
+         y="-56.673817"
+         id="tspan105933">         - Run project publish</tspan><tspan
+         sodipodi:role="line"
+         style="stroke-width:0.264583"
+         x="-1199.5338"
+         y="-43.444691"
+         id="tspan105935">         - [Deployed]</tspan><tspan
+         sodipodi:role="line"
+         style="stroke-width:0.264583"
+         x="-1199.5338"
+         y="-30.215569"
+         id="tspan103293">         </tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="-1005.6189"
+       y="-87.946602"
+       id="text104821"><tspan
+         sodipodi:role="line"
+         id="tspan104819"
+         style="stroke-width:0.264583"
+         x="-1005.6189"
+         y="-87.946602" /></text>
+  </g>
+</svg>
