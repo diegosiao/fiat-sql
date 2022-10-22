@@ -18,12 +18,7 @@ Besides that, Slink uses Dapper under the hood and has an efficiency first appro
 
 Stored Procedures are created in files that DBAs can easily track and apply in different environments after revision.
 
-## Pillars of Slink
-
-- Portability;
-- Efficiency first (developer convenience is put right after);
-- CQRS orientation;
-- Testability (WIP);
+A smart versions' control of your code and the compiled procedures prevent errors at runtime.
 
 ## Quick Start/Demonstration
 
