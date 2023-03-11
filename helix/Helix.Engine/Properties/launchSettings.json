@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Helix.Engine": {
+      "commandName": "Project",
+      "commandLineArgs": "C:\\Users\\USER\\git\\fiat-sql\\Helix.Example.Cli\\helix.config.json"
+    }
+  }
+}

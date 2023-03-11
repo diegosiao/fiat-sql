@@ -1,3 +1,8 @@
 {
-	"$schema": "https://raw.githubusercontent.com/diegosiao/fiat-sql/master/config/slink.config-schema.json"
+	"$schema": "https://raw.githubusercontent.com/diegosiao/fiat-sql/master/config/slink.config-schema.json",
+	"databases": [
+		{
+			"connectionString": ""
+		}
+	]
 }

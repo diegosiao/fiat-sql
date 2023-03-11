@@ -4,15 +4,33 @@
 	"description": "Defines the Slink configuration file schema",
 	"properties": {
 		"databases": {
-            "$comment": "The databases",
-            "type": "array",
-            "additionalProperties": { "$dynamicRef": "#meta" },
-            "deprecated": false,
-            "default": [
+			"$comment": "A list of databases included in the mapping",
+			"type": "array",
+			"additionalProperties": {
+				"$dynamicRef": "#meta"
+			},
+			"deprecated": false,
+			"default": [
 				{
-					"connectionString": ""
+					"name": "unique database name",
+					"connectionString": "",
+					"defaultBehaviour": {
+						"insert": true,
+						"update": true,
+						"select": true,
+						"delete": true
+					},
+					"tables": [
+						{
+							"name": "",
+							"insert": true,
+							"update": true,
+							"select": true,
+							"delete": true
+						}
+					]
 				}
 			]
-        }
+		}
 	}
 }

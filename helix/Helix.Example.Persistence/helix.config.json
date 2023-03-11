@@ -1,0 +1,31 @@
+{
+  "databases": [
+    {
+      "name": "Postgres",
+      "schema": "public",
+      "vendor": "postgres",
+      "connectionString": "Server=localhost;Port=5433;Database=postgres;User Id=postgres;Password=pwd123!;",
+      "domainNamespace": "Helix.Example.Persistence",
+      "namingConvention": "UppercaseAndUnderscoreSeparator",
+      "namingConverter": "My.Converter.MyUniqueConventionConverter",
+      "tableFilter": [
+        "public.*"
+      ],
+      "classes": [
+        {
+          "name": "car",
+          "properties": [
+            {
+              "name": "CreatedAt",
+              "readonly": true
+            }
+          ]
+        },
+        {
+          "name": "model",
+          "readonly": true
+        }
+      ]
+    }
+  ]
+}

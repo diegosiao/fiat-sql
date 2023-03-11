@@ -1,2 +1,5 @@
 .vs
 /helix/Helix.Common/obj
+
+**/bin
+**/obj

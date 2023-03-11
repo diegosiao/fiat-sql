@@ -8,14 +8,14 @@ services:
       - POSTGRES_PASSWORD=pwd123!
     ports:
       - 5433:5432
-  slink-mysql:
-    build: ./vendors/mysql
-    restart: always
-    environment:
-      - MYSQL_DATABASE=slink
-      - MYSQL_USER=slink
-      - MYSQL_PASSWORD=pwd123!
-      - MYSQL_ROOT_PASSWORD=pwd123!
-    ports:
-      - 3307:3306
+  # slink-mysql:
+  #   build: ./vendors/mysql
+  #   restart: always
+  #   environment:
+  #     - MYSQL_DATABASE=slink
+  #     - MYSQL_USER=slink
+  #     - MYSQL_PASSWORD=pwd123!
+  #     - MYSQL_ROOT_PASSWORD=pwd123!
+  #   ports:
+  #     - 3307:3306
   

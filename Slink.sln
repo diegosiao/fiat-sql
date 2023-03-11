@@ -9,6 +9,18 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Slink", "source\Slink\Slink
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Slink.Demonstration.Cli", "source\Slink.Cli\Slink.Demonstration.Cli.csproj", "{C4389DBF-1B77-476E-9C2F-12EA389D0E63}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "helix", "helix", "{2DFCF150-91DC-44C6-BA97-06FC2E711AAF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Helix.Engine", "helix\Helix.Engine\Helix.Engine.csproj", "{067A8242-CB4B-4E7B-8B90-5E652C2BB909}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Helix.Core", "Helix\Helix.Core\Helix.Core.csproj", "{247741D7-8786-4883-A14B-4E798B0743A2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Helix.Example.Persistence", "Helix\Helix.Example.Persistence\Helix.Example.Persistence.csproj", "{992DF207-F43E-4301-8D81-663ADCFD17CA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Helix.Common", "Helix\Helix.Common\Helix.Common.csproj", "{649CC1E2-CF71-4328-9B34-0EA1DF59875A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Helix.Example.Cli", "helix\Helix.Example.Cli\Helix.Example.Cli.csproj", "{6CF0D172-B096-4C4A-A525-E12B574C2212}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,9 +39,36 @@ Global
 		{C4389DBF-1B77-476E-9C2F-12EA389D0E63}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C4389DBF-1B77-476E-9C2F-12EA389D0E63}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C4389DBF-1B77-476E-9C2F-12EA389D0E63}.Release|Any CPU.Build.0 = Release|Any CPU
+		{067A8242-CB4B-4E7B-8B90-5E652C2BB909}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{067A8242-CB4B-4E7B-8B90-5E652C2BB909}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{067A8242-CB4B-4E7B-8B90-5E652C2BB909}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{067A8242-CB4B-4E7B-8B90-5E652C2BB909}.Release|Any CPU.Build.0 = Release|Any CPU
+		{247741D7-8786-4883-A14B-4E798B0743A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{247741D7-8786-4883-A14B-4E798B0743A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{247741D7-8786-4883-A14B-4E798B0743A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{247741D7-8786-4883-A14B-4E798B0743A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{992DF207-F43E-4301-8D81-663ADCFD17CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{992DF207-F43E-4301-8D81-663ADCFD17CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{992DF207-F43E-4301-8D81-663ADCFD17CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{992DF207-F43E-4301-8D81-663ADCFD17CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{649CC1E2-CF71-4328-9B34-0EA1DF59875A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{649CC1E2-CF71-4328-9B34-0EA1DF59875A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{649CC1E2-CF71-4328-9B34-0EA1DF59875A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{649CC1E2-CF71-4328-9B34-0EA1DF59875A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6CF0D172-B096-4C4A-A525-E12B574C2212}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CF0D172-B096-4C4A-A525-E12B574C2212}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CF0D172-B096-4C4A-A525-E12B574C2212}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CF0D172-B096-4C4A-A525-E12B574C2212}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{067A8242-CB4B-4E7B-8B90-5E652C2BB909} = {2DFCF150-91DC-44C6-BA97-06FC2E711AAF}
+		{247741D7-8786-4883-A14B-4E798B0743A2} = {2DFCF150-91DC-44C6-BA97-06FC2E711AAF}
+		{992DF207-F43E-4301-8D81-663ADCFD17CA} = {2DFCF150-91DC-44C6-BA97-06FC2E711AAF}
+		{649CC1E2-CF71-4328-9B34-0EA1DF59875A} = {2DFCF150-91DC-44C6-BA97-06FC2E711AAF}
+		{6CF0D172-B096-4C4A-A525-E12B574C2212} = {2DFCF150-91DC-44C6-BA97-06FC2E711AAF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F62DFFCC-804F-4673-A618-C8D753AE2CBF}
