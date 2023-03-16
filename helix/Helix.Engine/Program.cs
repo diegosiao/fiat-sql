@@ -9,9 +9,15 @@ namespace Helix.Engine
     {
         static int Main(string[] args)
         {
+            if (args.Length == 0 || !File.Exists(args[0]))
+            {
+                Console.WriteLine("You need to inform the 'helix.config.json' file location as first argument. ");
+                return 1;
+            }
+
             Console.WriteLine("Helix task 1 of 4: Loading configuration and validating configuration...");
 
-            var configFile = Path.Join(AppContext.BaseDirectory, @"..\..\..\..\Helix.Example.Persistence", "helix.config.json");
+            var configFile = Path.Join(args[0]);
 
             var configuration = JsonConvert.DeserializeObject<GlobalConfiguration>(File.ReadAllText(configFile));
 

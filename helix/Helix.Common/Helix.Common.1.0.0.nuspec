@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>Helix.Common</id>
+    <version>1.0.0</version>
+    <title>Helix.Common</title>
+    <authors>Helix.Common</authors>
+    <owners></owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Helix Common description</description>
+    <dependencies>
+      <group targetFramework="net6.0">
+        <dependency id="Npgsql" version="7.0.2" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="bin\$(Configuration)\net6.0\Helix.Common.dll" target="lib\net6.0\Helix.Common.dll" />
+  </files>
+</package>

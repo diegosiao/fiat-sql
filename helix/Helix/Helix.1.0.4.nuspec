@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+	<!-- dotnet pack .\Helix.csproj -p:NuspecFile=.\Helix.1.0.4.nuspec -o .\bin -->
+	<!-- dotnet tool install .\..\Helix.Engine\bin\Debug\Helix.Engine.1.0.0.nupkg -g -->
+    <id>Helix</id>
+    <version>1.0.6</version>
+    <title>Helix</title>
+    <authors>Helix</authors>
+    <owners></owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Make your applications stop mapping and start reflecting databases.</description>
+    <dependencies>
+      <group targetFramework="net6.0">
+        <dependency id="Helix.Common" version="1.0.0" exclude="Build,Analyzers" />
+        <dependency id="Dapper" version="2.0.123" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="Helix.targets" target="build\Helix.targets" />
+    <file src="bin\Debug\net6.0\Helix.dll" target="lib\net6.0\Helix.dll" />
+    <file src=".\..\Helix.Engine\bin\Debug\net6.0\publish\Helix.Common.dll" target="tools\helix-cli\Helix.Common.dll" />
+    <file src=".\..\Helix.Engine\bin\Debug\net6.0\publish\Helix.Common.pdb" target="tools\helix-cli\Helix.Common.pdb" />
+    <file src=".\..\Helix.Engine\bin\Debug\net6.0\publish\Helix.Engine.deps.json" target="tools\helix-cli\Helix.Engine.deps.json" />
+    <file src=".\..\Helix.Engine\bin\Debug\net6.0\publish\Helix.Engine.dll" target="tools\helix-cli\Helix.Engine.dll" />
+    <file src=".\..\Helix.Engine\bin\Debug\net6.0\publish\Helix.Engine.exe" target="tools\helix-cli\Helix.Engine.exe" />
+    <file src=".\..\Helix.Engine\bin\Debug\net6.0\publish\Helix.Engine.pdb" target="tools\helix-cli\Helix.Engine.pdb" />
+    <file src=".\..\Helix.Engine\bin\Debug\net6.0\publish\Helix.Engine.runtimeconfig.json" target="tools\helix-cli\Helix.Engine.runtimeconfig.json" />
+    <file src=".\..\Helix.Engine\bin\Debug\net6.0\publish\Microsoft.Extensions.Logging.Abstractions.dll" target="tools\helix-cli\Microsoft.Extensions.Logging.Abstractions.dll" />
+    <file src=".\..\Helix.Engine\bin\Debug\net6.0\publish\Newtonsoft.Json.dll" target="tools\helix-cli\Newtonsoft.Json.dll" />
+    <file src=".\..\Helix.Engine\bin\Debug\net6.0\publish\Npgsql.dll" target="tools\helix-cli\Npgsql.dll" />
+  </files>
+</package>
