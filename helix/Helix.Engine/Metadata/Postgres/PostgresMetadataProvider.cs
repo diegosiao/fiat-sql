@@ -55,9 +55,36 @@ namespace Helix.Engine.Metadata.Postgres
 						cl.oid = (SELECT ('""' || c.table_name || '""')::regclass::oid)
 						AND cl.relname = c.table_name
 				) AS column_comment
+				, (
+					select rel_tco.table_name
+					/* kcu.table_schema || '.' ||kcu.table_name as foreign_table,
+					       rel_tco.table_schema || '.' || rel_tco.table_name as primary_table,
+					       string_agg(kcu.column_name, ', ') as fk_columns,
+					       kcu.constraint_name
+					*/
+					from information_schema.table_constraints tco
+					join information_schema.key_column_usage kcu
+					          on tco.constraint_schema = kcu.constraint_schema
+					          and tco.constraint_name = kcu.constraint_name
+					join information_schema.referential_constraints rco
+					          on tco.constraint_schema = rco.constraint_schema
+					          and tco.constraint_name = rco.constraint_name
+					join information_schema.table_constraints rel_tco
+					          on rco.unique_constraint_schema = rel_tco.constraint_schema
+					          and rco.unique_constraint_name = rel_tco.constraint_name
+					where tco.constraint_type = 'FOREIGN KEY'
+					and   kcu.table_schema = c.table_schema 
+					and   kcu.table_name = c.table_name -- migrate to left joins
+                    and   kcu.column_name = c.column_name 
+					group by kcu.table_schema,
+					         kcu.table_name,
+					         rel_tco.table_name,
+					         rel_tco.table_schema,
+					         kcu.constraint_name
+				) ""references""
 			from information_schema.columns c
 			where table_schema = '$$schema$$'
-			order by table_schema, table_name, ordinal_position ;
+			order by table_schema, table_name, ordinal_position 
 		";
 
         public async Task LoadDescriptorsAsync()
@@ -78,9 +105,15 @@ namespace Helix.Engine.Metadata.Postgres
 
                 var tables = cols.GroupBy(x => x.Table);
 
+                if (!Directory.Exists(DatabaseDescriptorSql))
+                {
+                    Directory.CreateDirectory(Path.Join(DatabaseConfiguration.BaseDirectory, @"Tables"));
+                }
+
                 foreach (var table in tables)
                 {
                     var baseTemplate = @$"using Helix.Core;
+using Helix.Common;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.CodeAnalysis;
 
@@ -143,9 +176,14 @@ $values$
                             properties.AppendLine("        /// </summary>");
                         }
 
-                        if(column.IsPrimaryKey)
+                        if (column.IsPrimaryKey)
                         {
                             properties.AppendLine("        [Key]");
+                        }
+
+                        if (!string.IsNullOrWhiteSpace(column.References))
+                        {
+                            properties.AppendLine($"        [References(typeof({column.References}))]");
                         }
 
                         properties.AppendLine(
@@ -154,7 +192,7 @@ $values$
                     }
 
                     insertTemplate = insertTemplate.Replace(
-                        "$columns$", 
+                        "$columns$",
                         string.Join(@$",{Environment.NewLine}", table.Select(x => $"                            {x.Name}")));
 
                     insertTemplate = insertTemplate.Replace(
@@ -166,7 +204,7 @@ $values$
                         .Replace("$$insertTemplate$$", insertTemplate);
 
                     File.WriteAllText(
-                        Path.Join(DatabaseConfiguration.BaseDirectory, $"{table.Key}.cs"),
+                        Path.Join(DatabaseConfiguration.BaseDirectory, $"Tables/{table.Key}.cs"),
                         baseTemplate);
                 }
             }
@@ -187,6 +225,7 @@ $values$
                     Length = reader.IsDBNull(6) ? null : reader.GetInt32(6),
                     IsPrimaryKey = "YES".Equals(reader.GetString(7)),
                     Comment = reader.IsDBNull(8) ? null : reader.GetString(8),
+                    References = reader.IsDBNull(9) ? null : reader.GetString(9),
                 };
             }
         }

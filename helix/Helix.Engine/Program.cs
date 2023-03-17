@@ -32,6 +32,9 @@ namespace Helix.Engine
             var tasks = new List<Task>();
             foreach (var item in configuration.Databases)
             {
+                // Maybe that's a unecessary step. All vendors add up to 50Mb. Does it worth?
+                // DataProviderDllManager.LoadDatabaseVendors(item.Vendor)
+
                 item.BaseDirectory = Path.GetDirectoryName(configFile) ?? AppContext.BaseDirectory;
                 var metadataProvider = new PostgresMetadataProvider(item);
                 tasks.Add(metadataProvider.LoadDescriptorsAsync());

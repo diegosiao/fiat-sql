@@ -1,13 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Helix.Common
+﻿namespace Helix.Common
 {
+    /// <summary>
+    /// The most popular SQL databases as of 2023
+    /// </summary>
     public enum DatabaseVendor
     {
-        Postgres
+        None = 0,
+        Oracle,
+        MySql,
+        SqlServer,
+        Postgres,
     }
 }

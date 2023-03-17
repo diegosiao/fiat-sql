@@ -1,4 +1,5 @@
 using Helix.Core;
+using Helix.Common;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.CodeAnalysis;
 
@@ -18,16 +19,24 @@ namespace Helix.Example.Persistence
 {
     [SuppressMessage(
         "Style", "IDE1006:Naming Styles", Justification = "Helix 'never map' premise")]
-	public sealed partial class car : DbTuple
+	public sealed partial class person : DbTuple
 	{
         [Key]
         public Guid id { get; set; }
 
-        public string model { get; set; }
+        public string name { get; set; }
 
-        public int? modelyear { get; set; }
+        public DateTime? birth { get; set; }
 
-        public string? plates { get; set; }
+        public decimal? salary { get; set; }
+
+        public bool ispremium { get; set; }
+
+        [References(typeof(address))]
+        public Guid? homeaddressid { get; set; }
+
+        [References(typeof(address))]
+        public Guid? workaddressid { get; set; }
 
         public DateTime creation { get; set; }
 
@@ -41,11 +50,14 @@ namespace Helix.Example.Persistence
 
         private const string INSERT_TEMPLATE =
             @"
-                        INSERT INTO car (
+                        INSERT INTO person (
                             id,
-                            model,
-                            modelyear,
-                            plates,
+                            name,
+                            birth,
+                            salary,
+                            ispremium,
+                            homeaddressid,
+                            workaddressid,
                             creation,
                             createdby,
                             lastupdate,
@@ -53,9 +65,12 @@ namespace Helix.Example.Persistence
                         ) 
                         VALUES (
                             @id,
-                            @model,
-                            @modelyear,
-                            @plates,
+                            @name,
+                            @birth,
+                            @salary,
+                            @ispremium,
+                            @homeaddressid,
+                            @workaddressid,
                             @creation,
                             @createdby,
                             @lastupdate,
@@ -71,7 +86,7 @@ namespace Helix.Example.Persistence
         private const string DELETE_TEMPLATE =
             @"$$selectTemplate$$";
 
-        public car() : base(
+        public person() : base(
             INSERT_TEMPLATE,
             UPDATE_TEMPLATE,
             SELECT_TEMPLATE,

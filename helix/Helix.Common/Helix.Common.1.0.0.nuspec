@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
   <metadata>
     <id>Helix.Common</id>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <title>Helix.Common</title>
     <authors>Helix.Common</authors>
     <owners></owners>
@@ -15,6 +15,6 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="bin\$(Configuration)\net6.0\Helix.Common.dll" target="lib\net6.0\Helix.Common.dll" />
+    <file src="bin\Debug\net6.0\Helix.Common.dll" target="lib\net6.0\Helix.Common.dll" />
   </files>
 </package>

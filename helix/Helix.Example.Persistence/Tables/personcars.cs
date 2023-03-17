@@ -1,4 +1,5 @@
 using Helix.Core;
+using Helix.Common;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.CodeAnalysis;
 
@@ -23,8 +24,10 @@ namespace Helix.Example.Persistence
         [Key]
         public Guid id { get; set; }
 
+        [References(typeof(person))]
         public Guid personid { get; set; }
 
+        [References(typeof(car))]
         public Guid carid { get; set; }
 
         public DateTime creation { get; set; }

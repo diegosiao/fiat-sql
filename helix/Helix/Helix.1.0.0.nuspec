@@ -1,10 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
   <metadata>
-	<!-- dotnet pack .\Helix.csproj -p:NuspecFile=.\Helix.1.0.4.nuspec -o .\bin -->
-	<!-- dotnet tool install .\..\Helix.Engine\bin\Debug\Helix.Engine.1.0.0.nupkg -g -->
+	<!-- dotnet tool install Helix.Engine -g -->
+	<!-- dotnet pack .\..\Helix.Common\Helix.Common.csproj -p:NuspecFile=.\..\Helix.Common\Helix.Common.1.0.0.nuspec -o .\bin -->
+	<!-- dotnet pack .\Helix.csproj -p:NuspecFile=.\Helix.1.0.0.nuspec -o .\bin -->
     <id>Helix</id>
-    <version>1.0.6</version>
+    <version>1.0.1</version>
     <title>Helix</title>
     <authors>Helix</authors>
     <owners></owners>

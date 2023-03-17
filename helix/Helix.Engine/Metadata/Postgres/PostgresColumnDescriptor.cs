@@ -20,6 +20,8 @@ namespace Helix.Engine.Metadata.Postgres
 
         public string? Comment { get; internal set; }
 
+        public string? References { get; internal set; }
+
         public int? Length { get; internal set; }
         
         public bool IsPrimaryKey { get; internal set; }

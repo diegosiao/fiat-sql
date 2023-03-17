@@ -20,6 +20,8 @@
 
         string? Comment { get; }
 
+        string? References { get; }
+
         IDatabaseTypeDescriptor TypeDescriptor { get; }
     }
 }
